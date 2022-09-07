@@ -1,0 +1,16 @@
+.custom-btn {
+  box-shadow: -2px 2px 0px $black;
+  border: 2px solid $black;
+  border-radius: 8px;
+  line-height: 19px;
+}
+
+.custom-btn-primary {
+  background: $blue;
+  color: #fff;
+}
+
+.custom-btn-primary--hover:hover {
+  background: tint($blue, 20%);
+  color: #fff;
+}

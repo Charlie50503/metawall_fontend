@@ -1,2 +1,9 @@
+@import "./helper/bootstrap.custom";
+@import "node_modules/bootstrap/scss/bootstrap";
 /* You can add global styles to this file, and also import other style files */
+@import "./function/function";
 @import "./utils/utils";
+@import "./font/font";
+@import "./component/button";
+@import "./component/input";
+@import "./component/link";

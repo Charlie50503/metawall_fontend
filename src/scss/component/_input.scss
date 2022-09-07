@@ -1,0 +1,24 @@
+.custom-input {
+  padding: 1rem 2rem;
+}
+
+.custom-input-black {
+  border: 2px solid $black;
+
+}
+
+.custom-input::-webkit-input-placeholder {
+  font-family: 'Azeret Mono';
+}
+
+.custom-input:-ms-input-placeholder {
+  font-family: 'Azeret Mono';
+}
+
+.custom-input:-moz-placeholder {
+  font-family: 'Azeret Mono';
+}
+
+.custom-input::-moz-placeholder {
+  font-family: 'Azeret Mono';
+}
