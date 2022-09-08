@@ -9,3 +9,7 @@
 .bg-blue-700--hover:hover {
   background: tint($blue, 70%) !important;
 }
+
+.custom-bg-primary {
+  background: url("/assets/bg.svg");
+}
