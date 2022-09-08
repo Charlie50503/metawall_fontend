@@ -14,3 +14,13 @@
   background: tint($blue, 20%);
   color: #fff;
 }
+
+.custom-btn-info {
+  background: $cyan;
+  color: #fff;
+}
+
+.custom-btn-info--hover:hover {
+  background: dark($cyan, 20%);
+  color: #fff;
+}
