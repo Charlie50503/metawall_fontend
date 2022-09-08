@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './pages/main/main.component';
 import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
+import { PostComponent } from './components/post/post.component';
+import { PostSearchBarComponent } from './components/post-search-bar/post-search-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HeaderProfileComponent } from './components/header-profile/header-profi
     HeaderComponent,
     SidebarComponent,
     MainComponent,
-    HeaderProfileComponent
+    HeaderProfileComponent,
+    PostComponent,
+    PostSearchBarComponent
   ],
   imports: [
     BrowserModule,
