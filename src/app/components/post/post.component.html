@@ -26,4 +26,9 @@
       </button>
     </div>
   </div>
+  <ul class="list-unstyled">
+    <li *ngFor="let item of ary;let idx=index" class="" [class]="{'mb-3':idx!==(ary.length-1)}">
+      <app-comment></app-comment>
+    </li>
+  </ul>
 </div>

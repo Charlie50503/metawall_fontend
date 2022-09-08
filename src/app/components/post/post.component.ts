@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-
+  ary = [1,2]
   constructor() { }
 
   ngOnInit(): void {
