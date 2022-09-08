@@ -1,0 +1,33 @@
+.post-photo {
+  height: 157px;
+  width: 100%;
+  object-fit: cover;
+}
+.post-like {
+  width: 20px;
+  height: 20px;
+
+  &:hover {
+    filter: #03438d;
+  }
+}
+
+.post-like-btn {
+  pointer-events: auto;
+}
+
+// .post-like-btn:hover {
+// }
+.comment-user-photo {
+  width: 40px;
+  height: 40px;
+}
+
+.comment-btn {
+  width: 128px;
+  height: 40px;
+}
+
+.comment-input {
+  height: 40px;
+}
