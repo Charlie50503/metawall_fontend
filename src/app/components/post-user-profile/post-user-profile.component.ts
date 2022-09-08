@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-post-user-profile',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-user-profile.component.scss']
 })
 export class PostUserProfileComponent implements OnInit {
-
+  @Input() postUserProfilePhotoClass: string = "";
   constructor() { }
 
   ngOnInit(): void {
