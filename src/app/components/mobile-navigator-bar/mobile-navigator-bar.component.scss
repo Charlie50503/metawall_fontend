@@ -1,7 +1,5 @@
-
-
 .navigator-bar {
-  border: 3px solid ;
+  border: 3px solid;
   border-radius: 32px;
 }
 
@@ -13,20 +11,31 @@
 .home-icon {
   width: 20px;
   height: 22px;
+  padding: auto;
 }
 
 .alert-icon {
   width: 20px;
   height: 25px;
+  padding: auto;
 }
 
 .like-icon {
   width: 20px;
   height: 20px;
+  padding: auto;
 }
 
 .add-icon {
-  filter:invert(1);
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
+  padding: auto;
+}
+
+.add-btn .add-icon {
+  filter: invert(1);
+}
+
+.add-btn:hover .add-icon {
+  filter: invert(0);
 }
