@@ -1,0 +1,39 @@
+.search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.search-btn {
+  width: 46px;
+  height: 46px;
+}
+
+.search-input {
+  height: 46px;
+}
+
+.search-sort-wrapper {
+  position: relative;
+}
+
+.search-sort-wrapper::after {
+  content: "　";
+  background-image: url("/assets/chevron-down-solid.svg");
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 12px;
+  pointer-events: none;
+}
+
+.search-sort {
+  height: 46px;
+
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}
+
