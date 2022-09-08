@@ -12,6 +12,7 @@ import { PostComponent } from './components/post/post.component';
 import { PostSearchBarComponent } from './components/post-search-bar/post-search-bar.component';
 import { PostUserProfileComponent } from './components/post-user-profile/post-user-profile.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PostListComponent } from './components/post-list/post-list.component';
     PostComponent,
     PostSearchBarComponent,
     PostUserProfileComponent,
-    PostListComponent
+    PostListComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
