@@ -13,6 +13,7 @@ import { PostSearchBarComponent } from './components/post-search-bar/post-search
 import { PostUserProfileComponent } from './components/post-user-profile/post-user-profile.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { MobileNavigatorBarComponent } from './components/mobile-navigator-bar/mobile-navigator-bar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CommentComponent } from './components/comment/comment.component';
     PostSearchBarComponent,
     PostUserProfileComponent,
     PostListComponent,
-    CommentComponent
+    CommentComponent,
+    MobileNavigatorBarComponent
   ],
   imports: [
     BrowserModule,
