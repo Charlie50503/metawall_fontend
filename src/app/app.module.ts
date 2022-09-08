@@ -10,6 +10,8 @@ import { MainComponent } from './pages/main/main.component';
 import { HeaderProfileComponent } from './components/header-profile/header-profile.component';
 import { PostComponent } from './components/post/post.component';
 import { PostSearchBarComponent } from './components/post-search-bar/post-search-bar.component';
+import { PostUserProfileComponent } from './components/post-user-profile/post-user-profile.component';
+import { PostListComponent } from './components/post-list/post-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PostSearchBarComponent } from './components/post-search-bar/post-search
     MainComponent,
     HeaderProfileComponent,
     PostComponent,
-    PostSearchBarComponent
+    PostSearchBarComponent,
+    PostUserProfileComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
