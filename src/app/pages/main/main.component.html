@@ -1,16 +1,20 @@
-<app-header></app-header>
-<main class="container">
-  <div class="row">
-    <div class="col-12 col-lg-8">
-      <app-post-list></app-post-list>
+<div class="custom-bd-b-1 bd-black">
+  <app-header></app-header>
+</div>
+<div class="custom-bg-primary pt-md-5 pt-3">
+  <main class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8">
+        <app-post-list></app-post-list>
+      </div>
+      <div class="col-0 col-lg-4 d-none d-lg-block">
+        <app-sidebar></app-sidebar>
+      </div>
     </div>
-    <div class="col-0 col-lg-4 d-none d-lg-block">
-      <app-sidebar></app-sidebar>
+  </main>
+  <footer class="d-md-none w-100 fixed-bottom">
+    <div class="container">
+      <app-mobile-navigator-bar></app-mobile-navigator-bar>
     </div>
-  </div>
-</main>
-<footer class="d-md-none w-100 fixed-bottom">
-  <div class="container">
-    <app-mobile-navigator-bar></app-mobile-navigator-bar>
-  </div>
-</footer>
+  </footer>
+</div>
