@@ -1,3 +1,11 @@
 .bg-teal {
   background: $teal;
 }
+
+.bg-primary--hover:hover {
+  background: $blue !important;
+}
+
+.bg-blue-700--hover:hover {
+  background: tint($blue, 70%) !important;
+}
