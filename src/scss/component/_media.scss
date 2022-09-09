@@ -24,8 +24,6 @@
 
 .media-block-rounded-2-photo {
   object-fit: cover;
-  border-top: 2px solid $black;
-  border-left: 2px solid $black;
-  border-bottom: 2px solid $black;
+  border: 2px solid $black;
   border-radius: 8px 0px 0px 8px;
 }
