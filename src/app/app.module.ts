@@ -15,6 +15,7 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { MobileNavigatorBarComponent } from './components/mobile-navigator-bar/mobile-navigator-bar.component';
 import { PostPersonalProfileComponent } from './components/post-personal-profile/post-personal-profile.component';
+import { PostEmptyComponent } from './components/post-empty/post-empty.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PostPersonalProfileComponent } from './components/post-personal-profile
     PostListComponent,
     CommentComponent,
     MobileNavigatorBarComponent,
-    PostPersonalProfileComponent
+    PostPersonalProfileComponent,
+    PostEmptyComponent
   ],
   imports: [
     BrowserModule,
