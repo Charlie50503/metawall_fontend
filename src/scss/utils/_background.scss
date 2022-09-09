@@ -2,6 +2,22 @@
   background: $teal;
 }
 
+.bg-gray-1500 {
+  background: $gray-1500;
+}
+
+.bg-yellow-1000 {
+  background: $yellow-1000;
+}
+
+.bg-yellow-1100 {
+  background: $yellow-1100;
+}
+
+.bg-red-1000 {
+  background: $red-1000;
+}
+
 .bg-primary--hover:hover {
   background: $blue !important;
 }
@@ -13,3 +29,4 @@
 .custom-bg-primary {
   background: url("/assets/bg.svg");
 }
+
