@@ -1,8 +1,9 @@
-.media-block-rounded-2-wrapper {
+.media-primary-wrapper {
   position: relative;
   z-index: 10;
 }
-.media-block-rounded-2-wrapper::after {
+
+.media-primary-wrapper::after {
   content: "";
   height: 100%;
   width: 100%;
@@ -11,18 +12,16 @@
   top: 6px;
   right: 5px;
   border: 2px solid $black;
-  border-radius: 8px;
   z-index: -1;
 }
 
-.media-block-rounded-2-content {
+.media-primary-content {
   border-top: 2px solid $black;
   border-right: 2px solid $black;
   border-bottom: 2px solid $black;
-  border-radius: 0px 8px 8px 0px;
 }
 
-.media-block-rounded-2-photo {
+.media-primary-photo {
   object-fit: cover;
   border: 2px solid $black;
   border-radius: 8px 0px 0px 8px;
