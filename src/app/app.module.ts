@@ -17,6 +17,7 @@ import { MobileNavigatorBarComponent } from './components/mobile-navigator-bar/m
 import { PostPersonalProfileComponent } from './components/post-personal-profile/post-personal-profile.component';
 import { PostEmptyComponent } from './components/post-empty/post-empty.component';
 import { FollowingComponent } from './components/following/following.component';
+import { FollowingMediaComponent } from './components/following-media/following-media.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FollowingComponent } from './components/following/following.component';
     MobileNavigatorBarComponent,
     PostPersonalProfileComponent,
     PostEmptyComponent,
-    FollowingComponent
+    FollowingComponent,
+    FollowingMediaComponent
   ],
   imports: [
     BrowserModule,
