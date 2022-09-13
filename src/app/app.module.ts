@@ -20,6 +20,7 @@ import { FollowingComponent } from './components/following/following.component';
 import { FollowingMediaComponent } from './components/following-media/following-media.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { MainHeaderPrimaryComponent } from './components/main-header-primary/main-header-primary.component';
+import { PostImageComponent } from './components/post-image/post-image.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MainHeaderPrimaryComponent } from './components/main-header-primary/mai
     FollowingComponent,
     FollowingMediaComponent,
     PostEditComponent,
-    MainHeaderPrimaryComponent
+    MainHeaderPrimaryComponent,
+    PostImageComponent
   ],
   imports: [
     BrowserModule,
