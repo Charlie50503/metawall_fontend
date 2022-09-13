@@ -26,3 +26,17 @@
 .custom-input::-moz-placeholder {
   font-family: 'Azeret Mono';
 }
+
+
+.custom-input-placeholder-gray-1100::placeholder {
+  color: $gray-1100;
+  opacity: 1; /* Firefox */
+}
+
+.custom-input-placeholder-gray-1100:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: $gray-1100;
+}
+
+.custom-input-placeholder-gray-1100::-ms-input-placeholder { /* Microsoft Edge */
+ color: $gray-1100;
+}
