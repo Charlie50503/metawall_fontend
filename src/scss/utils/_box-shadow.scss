@@ -8,3 +8,11 @@
 .box-shadow-black {
   box-shadow: $black;
 }
+
+.box-shadow-lb-1--hover:hover {
+  box-shadow: -2px 2px 0px;
+}
+
+.box-shadow-black-hover:hover {
+  box-shadow: $black;
+}
