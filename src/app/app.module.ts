@@ -18,6 +18,7 @@ import { PostPersonalProfileComponent } from './components/post-personal-profile
 import { PostEmptyComponent } from './components/post-empty/post-empty.component';
 import { FollowingComponent } from './components/following/following.component';
 import { FollowingMediaComponent } from './components/following-media/following-media.component';
+import { PostEditComponent } from './components/post-edit/post-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FollowingMediaComponent } from './components/following-media/following-
     PostPersonalProfileComponent,
     PostEmptyComponent,
     FollowingComponent,
-    FollowingMediaComponent
+    FollowingMediaComponent,
+    PostEditComponent
   ],
   imports: [
     BrowserModule,

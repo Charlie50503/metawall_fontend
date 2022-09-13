@@ -5,17 +5,20 @@
   <main class="container">
     <div class="row">
       <div class="col-12 col-lg-8">
-        <div class="mb-3">
+        <div class="mb-3" hidden>
           <app-post-personal-profile></app-post-personal-profile>
         </div>
-        <div class="mb-3">
+        <div class="mb-3" hidden>
           <app-post-empty hidden></app-post-empty>
         </div>
-        <div>
+        <div hidden>
           <app-post-list hidden></app-post-list>
         </div>
-        <div>
+        <div >
           <app-following></app-following>
+        </div>
+        <div>
+          <app-post-edit></app-post-edit>
         </div>
       </div>
       <div class="col-0 col-lg-4 d-none d-lg-block">
