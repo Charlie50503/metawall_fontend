@@ -5,6 +5,10 @@
   line-height: 19px;
 }
 
+.custom-btn-second {
+  padding: 16px 130px;
+}
+
 .custom-btn-primary {
   background: $blue;
   color: #fff;
@@ -23,4 +27,24 @@
 .custom-btn-info--hover:hover {
   background: dark($cyan, 20%);
   color: #fff;
+}
+
+.custom-btn-black {
+  background: $black;
+  color: #fff;
+}
+
+.custom-btn-black--hover:hover {
+  background: tint($black, 20%);
+  color: #fff;
+}
+
+.custom-btn-gray-1200 {
+  background: $gray-1200;
+  color: $black;
+}
+
+.custom-btn-gray-1200--hover:hover {
+  background: dark($gray-1200, 20%);
+  color: $black;
 }
