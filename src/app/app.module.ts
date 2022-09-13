@@ -19,6 +19,7 @@ import { PostEmptyComponent } from './components/post-empty/post-empty.component
 import { FollowingComponent } from './components/following/following.component';
 import { FollowingMediaComponent } from './components/following-media/following-media.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
+import { MainHeaderPrimaryComponent } from './components/main-header-primary/main-header-primary.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
     PostEmptyComponent,
     FollowingComponent,
     FollowingMediaComponent,
-    PostEditComponent
+    PostEditComponent,
+    MainHeaderPrimaryComponent
   ],
   imports: [
     BrowserModule,
