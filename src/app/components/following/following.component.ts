@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./following.component.scss']
 })
 export class FollowingComponent implements OnInit {
-
+  items = [1,2,3]
   constructor() { }
 
   ngOnInit(): void {

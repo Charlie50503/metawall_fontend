@@ -7,7 +7,7 @@
   </div>
 </div>
 <ul class="list-unstyled mb-0">
-  <li>
+  <li *ngFor="let item of items;let idx=index" class="" [class]="{'mb-3':idx!==(items.length-1)}">
     <app-following-media></app-following-media>
   </li>
 </ul>
