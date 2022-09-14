@@ -3,17 +3,17 @@
 
 <div class="personal-profile-bar d-flex ms-3">
   <div (click)="toggleIsDisplayTab('personalProfileEdit')">
-    <h3 [ngClass]="{'text-white bg-black': isDisplayTab['personalProfileEdit'] , 'bg-white': !isDisplayTab['personalProfileEdit']}" class="rounded-top-2 border border-2 bd-black  d-flex justify-content-center align-items-center fs-6 lh-base py-2 px-4 mb-0" font="noto">暱稱修改</h3>
+    <h3 [ngClass]="{'text-white bg-black': isDisplayTab['personalProfileEdit'] , 'bg-white': !isDisplayTab['personalProfileEdit']}" class="rounded-top-2 border border-2 border-bottom-0 bd-black d-flex justify-content-center align-items-center fs-6 lh-base py-2 px-4 mb-0" font="noto">暱稱修改</h3>
   </div>
   <div (click)="toggleIsDisplayTab('personalProfileChangePassword')">
-    <h3 [ngClass]="{'text-white bg-black': isDisplayTab['personalProfileChangePassword'] , 'bg-white': !isDisplayTab['personalProfileChangePassword']}" class="rounded-top-2 border border-2 bd-black d-flex justify-content-center align-items-center fs-6 lh-base py-2 px-4 mb-0" font="noto">重設密碼</h3>
+    <h3 [ngClass]="{'text-white bg-black': isDisplayTab['personalProfileChangePassword'] , 'bg-white': !isDisplayTab['personalProfileChangePassword']}" class="rounded-top-2 border border-2 border-bottom-0 bd-black d-flex justify-content-center align-items-center fs-6 lh-base py-2 px-4 mb-0" font="noto">重設密碼</h3>
   </div>
 </div>
 <div class="border border-2 bd-black rounded-2 bg-white box-shadow-d-2 p-5">
-  <div>
+  <div [hidden]="!isDisplayTab['personalProfileEdit']">
     <app-personal-profile-edit></app-personal-profile-edit>
   </div>
-  <div>
+  <div [hidden]="!isDisplayTab['personalProfileChangePassword']">
     <app-personal-profile-change-password></app-personal-profile-change-password>
   </div>
 </div>
