@@ -23,6 +23,9 @@ import { MainHeaderPrimaryComponent } from './components/main-header-primary/mai
 import { PostImageComponent } from './components/post-image/post-image.component';
 import { LikeListComponent } from './components/like-list/like-list.component';
 import { LikeUserComponent } from './components/like-user/like-user.component';
+import { PersonalProfileComponent } from './components/personal-profile/personal-profile.component';
+import { PersonalProfileEditComponent } from './components/personal-profile-edit/personal-profile-edit.component';
+import { PersonalProfileChangePasswordComponent } from './components/personal-profile-change-password/personal-profile-change-password.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { LikeUserComponent } from './components/like-user/like-user.component';
     MainHeaderPrimaryComponent,
     PostImageComponent,
     LikeListComponent,
-    LikeUserComponent
+    LikeUserComponent,
+    PersonalProfileComponent,
+    PersonalProfileEditComponent,
+    PersonalProfileChangePasswordComponent
   ],
   imports: [
     BrowserModule,
