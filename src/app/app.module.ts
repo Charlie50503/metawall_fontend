@@ -21,6 +21,8 @@ import { FollowingMediaComponent } from './components/following-media/following-
 import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { MainHeaderPrimaryComponent } from './components/main-header-primary/main-header-primary.component';
 import { PostImageComponent } from './components/post-image/post-image.component';
+import { LikeListComponent } from './components/like-list/like-list.component';
+import { LikeUserComponent } from './components/like-user/like-user.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { PostImageComponent } from './components/post-image/post-image.component
     FollowingMediaComponent,
     PostEditComponent,
     MainHeaderPrimaryComponent,
-    PostImageComponent
+    PostImageComponent,
+    LikeListComponent,
+    LikeUserComponent
   ],
   imports: [
     BrowserModule,
