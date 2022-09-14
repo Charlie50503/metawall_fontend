@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./like-list.component.scss']
 })
 export class LikeListComponent implements OnInit {
-
+  items = [1,2,3]
   constructor() { }
 
   ngOnInit(): void {

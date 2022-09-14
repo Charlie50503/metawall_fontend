@@ -1,1 +1,6 @@
-<p>like-list works!</p>
+<app-main-header-primary title="我按讚的貼文"></app-main-header-primary>
+<ul class="list-unstyled mb-0">
+  <li *ngFor="let item of items;let idx=index" class="" [class]="{'mb-3':idx!==(items.length-1)}">
+    <app-like-user></app-like-user>
+  </li>
+</ul>
