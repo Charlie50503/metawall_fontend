@@ -54,3 +54,8 @@
   color: $black;
 }
 
+.custom-btn-secondary-disabled:disabled {
+  color: #fff;
+  background: $gray-1200;
+  border-color: $gray-1300;
+}
