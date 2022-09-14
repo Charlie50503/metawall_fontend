@@ -7,3 +7,8 @@
   width: 20px;
   height: 20px;
 }
+
+.like-btn:hover,.check-btn:hover {
+  filter: invert(12%) sepia(92%) saturate(3344%) hue-rotate(203deg) brightness(98%) contrast(98%);
+  cursor: pointer;
+}
