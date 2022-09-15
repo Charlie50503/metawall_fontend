@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { httpResponse } from '../interfaces/http.interface';
 import { post } from '../interfaces/post.interface';
 
 @Injectable({
@@ -16,7 +17,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   public getData(
-  ): Observable<Array<post>> {
+  ): Observable<post[]> {
     const URL = '/post/all-post';
     // const httpOptions = {
     //   headers: new HttpHeaders({
@@ -30,7 +31,9 @@ export class PostService {
     // }
     // const URL = 'http://localhost:3000/post/all-post';
     // return this.http.get<any>(URL,httpOptions);
-    return this.http.get<Array<post>>(URL);
+    return this.http.get<httpResponse>(URL).pipe(
+      map(response=>response.data)
+    );
   }
 
 }
