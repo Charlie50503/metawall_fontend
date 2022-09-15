@@ -16,7 +16,7 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  public getData(
+  public getAllPost(
   ): Observable<post[]> {
     const URL = '/post/all-post';
     // const httpOptions = {
