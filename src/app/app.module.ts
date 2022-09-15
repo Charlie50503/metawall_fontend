@@ -26,6 +26,9 @@ import { LikeUserComponent } from './components/like-user/like-user.component';
 import { PersonalProfileComponent } from './components/personal-profile/personal-profile.component';
 import { PersonalProfileEditComponent } from './components/personal-profile-edit/personal-profile-edit.component';
 import { PersonalProfileChangePasswordComponent } from './components/personal-profile-change-password/personal-profile-change-password.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './services/http/http.interceptor.service';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -56,9 +59,16 @@ import { PersonalProfileChangePasswordComponent } from './components/personal-pr
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
