@@ -1,23 +1,22 @@
 <div class="post bg-white border border-2 bd-black rounded-2 p-4">
   <div class="mb-3">
-    <app-post-user-profile postUserProfilePhotoClass="me-3"></app-post-user-profile>
+    <app-post-user-profile [creator]="post.creator" [createdAt]="post.createdAt" postUserProfilePhotoClass="me-3"></app-post-user-profile>
   </div>
   <p class="" font="noto">
-    外面看起來就超冷....<br>
-     我決定回被窩繼續睡....>.<
+    {{post.content}}
   </p>
-  <div class="mb-3 pb-1">
-    <app-post-image></app-post-image>
+  <div class="mb-3 pb-1" *ngIf="post.imgURL!==''">
+    <app-post-image [imgUrl]="post.imgURL"></app-post-image>
   </div>
   <div class="d-flex align-items-center mb-3 pb-1">
     <div class="post-like-btn d-inline-flex rounded-5 me-2">
       <img class="post-like" src="/assets/like.svg" alt="讚">
     </div>
-    <p class="mb-0" font="baloo">12</p>
+    <p class="mb-0" font="baloo">{{post.likes.length}}</p>
   </div>
   <div class="row mb-3">
     <div class="d-none d-md-block col-md-1">
-      <img class="comment-user-photo me-2" src="/assets/user.png" alt="用戶照片">
+      <img class="comment-user-photo me-2" [src]="_userImgUrl" alt="用戶照片">
     </div>
     <div class="col-12 col-md-11 d-flex align-items-center">
       <input type="text" class="comment-input custom-input-sm custom-input-black w-100 lh-sm-base bd-r-0" placeholder="留言...">
