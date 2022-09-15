@@ -7,6 +7,7 @@ export interface post {
     avatar:string,
     sex:"male" | "female"
   },
+  createdAt:string,
   imgURL:string,
   likes:[],
   _id:string
