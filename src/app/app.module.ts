@@ -1,3 +1,4 @@
+import { MainModule } from './pages/main/main.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -60,7 +61,8 @@ import { APP_BASE_HREF } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MainModule
   ],
   providers: [
     {
