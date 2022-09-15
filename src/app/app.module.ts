@@ -1,7 +1,6 @@
 import { MainModule } from './pages/main/main.module';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import localeJa from '@angular/common/locales/ja'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -29,9 +28,8 @@ import { PersonalProfileEditComponent } from './components/personal-profile-edit
 import { PersonalProfileChangePasswordComponent } from './components/personal-profile-change-password/personal-profile-change-password.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/http/http.interceptor.service';
-import { APP_BASE_HREF, DatePipe, registerLocaleData } from '@angular/common';
+import { APP_BASE_HREF, DatePipe } from '@angular/common';
 
-registerLocaleData(localeJa);
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +65,6 @@ registerLocaleData(localeJa);
   ],
   providers: [
     DatePipe,
-    { provide: LOCALE_ID, useValue: "ja-JP" },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
