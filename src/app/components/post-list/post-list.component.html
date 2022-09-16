@@ -2,9 +2,7 @@
   <app-post-search-bar></app-post-search-bar>
 </div>
 <ul class="list-unstyled">
-  <li>
-    <div>
-      <app-post></app-post>
-    </div>
+  <li *ngFor="let post of postList;let idx=index" class="mb-3" [class]="{'mb-3':idx!==(postList.length-1)}">
+      <app-post [post]="post"></app-post>
   </li>
 </ul>
