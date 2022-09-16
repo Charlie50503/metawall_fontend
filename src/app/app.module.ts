@@ -29,6 +29,7 @@ import { PersonalProfileChangePasswordComponent } from './components/personal-pr
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/http/http.interceptor.service';
 import { DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { DatePipe } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MainModule
+    MainModule,
+    FormsModule
   ],
   providers: [
     DatePipe,
