@@ -28,7 +28,7 @@ import { PersonalProfileEditComponent } from './components/personal-profile-edit
 import { PersonalProfileChangePasswordComponent } from './components/personal-profile-change-password/personal-profile-change-password.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/http/http.interceptor.service';
-import { APP_BASE_HREF, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
