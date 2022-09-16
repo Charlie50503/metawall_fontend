@@ -9,7 +9,7 @@ import { user } from 'src/app/interfaces/user.interface';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  postList!:Array<post>;
+  postList!:post[];
   constructor(
     private postService:PostService,
   ) { }
@@ -20,10 +20,8 @@ export class PostListComponent implements OnInit {
     this.initApi()
   }
 
-  initApi(){
-    this.postService.getAllPost().subscribe(payload=>{
-      console.log(payload);
-      this.postList = payload
-    })
+  async initApi(){
+    await this.postService.getAllPost()
+    this.postList = this.postService.postList
   }
 }
