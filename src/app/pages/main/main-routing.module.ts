@@ -6,10 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { FollowingComponent } from 'src/app/components/following/following.component';
 import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { MainComponent } from './main.component';
+import { PostsResolver } from 'src/app/router/router';
 
 const routes: Routes = [
   {
     path: "main", component: MainComponent,
+    resolve:{
+      posts:PostsResolver
+    },
     children: [
       { path: 'all-post', component: PostListComponent },
       { path: 'following', component: FollowingComponent },
@@ -22,6 +26,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[
+    PostsResolver
+  ]
 })
 export class MainRoutingModule { }
