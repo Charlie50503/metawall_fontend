@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom, map } from 'rxjs';
 import { httpResponse } from '../interfaces/http.interface';
 import { user } from '../interfaces/user.interface';
+import API_LIST from './api/api-list';
 import { UserImgUrlService } from './user-img-url.service';
 
 @Injectable({
@@ -23,7 +24,7 @@ export class ConfigService {
     ) { }
 
   async load(): Promise<void> {
-    this._userProfile = await lastValueFrom(this.http.get<httpResponse>('/user/profile/6322cd14b48b514e1f3f16a8')
+    this._userProfile = await lastValueFrom(this.http.get<httpResponse>(API_LIST.GET.USER_PROFILE)
       .pipe(
         map(response => response.data)
       ))
