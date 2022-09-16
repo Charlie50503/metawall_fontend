@@ -15,16 +15,16 @@ export class PostListService {
 
   constructor(private http: HttpClient) { }
 
-  public async getAllPost(
+  public async getAllPost(sort:string
     ): Promise<void> {
-      this._postList = await lastValueFrom(this.http.get<httpResponse>(API_LIST.GET.ALL_POST).pipe(
+      this._postList = await lastValueFrom(this.http.get<httpResponse>(API_LIST.GET.ALL_POST(sort)).pipe(
         map(response => response.data)
       ))
     }
 
-  public async searchPost(keyword: string
+  public async searchPost(keyword: string,sort:string
   ): Promise<void> {
-    this._postList = await lastValueFrom(this.http.get<httpResponse>(API_LIST.GET.SEARCH_POST(keyword)).pipe(
+    this._postList = await lastValueFrom(this.http.get<httpResponse>(API_LIST.GET.SEARCH_POST(keyword,sort)).pipe(
       map(response => response.data)
     ))
   }
