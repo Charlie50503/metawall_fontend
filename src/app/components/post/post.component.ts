@@ -1,4 +1,3 @@
-import { UserService } from './../../services/user.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { post } from 'src/app/interfaces/post.interface';
 import { ConfigService } from 'src/app/services/config.service';
@@ -11,7 +10,6 @@ export class PostComponent implements OnInit {
   @Input() post!:post;
 
   userProfile = this.configService.userProfile;
-
   userImgUrl = this.configService.userImgUrl
   ary = [1,2]
   constructor(
