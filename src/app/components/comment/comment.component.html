@@ -1,6 +1,6 @@
 <div class="bg-teal border border-1 bd-black rounded-3-5 p-3">
   <div class="mb-1">
-    <app-post-user-profile postUserProfilePhotoClass="me-2-5"></app-post-user-profile>
+    <app-post-user-profile postUserProfilePhotoClass="me-2-5" [creator]="comment.creator"></app-post-user-profile>
   </div>
-  <p class="comment-content mb-0">真的～我已經準備冬眠了</p>
+  <p class="comment-content mb-0">{{comment.comment}}</p>
 </div>
