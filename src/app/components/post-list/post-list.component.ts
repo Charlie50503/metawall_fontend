@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { post } from 'src/app/interfaces/post.interface';
-import { PostService } from 'src/app/services/post.service';
+import { PostListService } from 'src/app/services/post-list.service';
 import { user } from 'src/app/interfaces/user.interface';
 
 @Component({
@@ -11,7 +11,7 @@ import { user } from 'src/app/interfaces/user.interface';
 export class PostListComponent implements OnInit {
   postList!:post[];
   constructor(
-    private postService:PostService,
+    private postListService:PostListService,
   ) { }
 
     userProfile!:user;
@@ -21,7 +21,7 @@ export class PostListComponent implements OnInit {
   }
 
   async initApi(){
-    await this.postService.getAllPost()
-    this.postList = this.postService.postList
+    await this.postListService.getAllPost()
+    this.postList = this.postListService.postList
   }
 }

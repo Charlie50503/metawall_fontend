@@ -9,7 +9,7 @@ import API_LIST from './api/api-list';
   providedIn: 'root'
 })
 
-export class PostService {
+export class PostListService {
   private _postList!: post[];
   get postList() { return this._postList; }
 
