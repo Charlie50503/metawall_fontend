@@ -1,17 +1,15 @@
 <div class="row">
   <div class="col-12 col-md-3 mb-2 mb-md-0">
     <div class="search-sort-wrapper">
-      <select class="search-sort bg-white custom-input-sm custom-input-black lh-sm-base w-100" id="floatingSelect" aria-label="Floating label select example">
-        <option selected>最新貼文</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+      <select class="search-sort bg-white custom-input-sm custom-input-black lh-sm-base w-100" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="sort">
+        <option value="-1">從新⇨舊</option>
+        <option value="1">從舊⇨新</option>
       </select>
     </div>
   </div>
   <div class="col-12 col-md-9 d-flex">
-    <input type="text" class="search-input custom-input-sm custom-input-black w-100 lh-sm-base bd-r-0" placeholder="搜尋貼文">
-    <button class="search-btn bg-primary">
+    <input type="text" class="search-input custom-input-sm custom-input-black w-100 lh-sm-base bd-r-0" placeholder="搜尋貼文" [(ngModel)]="searchKeyword">
+    <button class="search-btn bg-primary" (click)="doSearch()">
       <img class="search-icon" src="/assets/magnifying-glass-solid.svg" alt="搜尋">
     </button>
   </div>

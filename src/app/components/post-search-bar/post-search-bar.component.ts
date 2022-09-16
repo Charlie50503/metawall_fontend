@@ -1,3 +1,4 @@
+import { PostListService } from 'src/app/services/post-list.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostSearchBarComponent implements OnInit {
 
-  constructor() { }
+  searchKeyword:string = "";
+  sort:string = "-1";
+  constructor(
+    private postListService:PostListService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  doSearch(){
+    if(this.searchKeyword===""){
+      this.postListService.getAllPost(this.sort)
+    }else{
+      this.postListService.searchPost(this.searchKeyword,this.sort)
+    }
+  }
 }
