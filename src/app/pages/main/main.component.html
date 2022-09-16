@@ -1,59 +1,61 @@
-<ul class="d-flex list-unstyled">
-  <li class="me-3">
-    <a routerLink="/main/all-post">all-post</a>
-  </li>
-  <li class="me-3">
-    <a routerLink="/main/following">following</a>
-  </li>
-  <li class="me-3">
-    <a routerLink="/main/post-edit">post-edit</a>
-  </li>
-  <li class="me-3">
-    <a routerLink="/main/like-list">like-list</a>
-  </li>
-  <li class="me-3">
-    <a routerLink="/main/personal-profile">personal-profile</a>
-  </li>
-</ul>
+<div *ngIf="userProfile">
+  <ul class="d-flex list-unstyled">
+    <li class="me-3">
+      <a routerLink="/main/all-post">all-post</a>
+    </li>
+    <li class="me-3">
+      <a routerLink="/main/following">following</a>
+    </li>
+    <li class="me-3">
+      <a routerLink="/main/post-edit">post-edit</a>
+    </li>
+    <li class="me-3">
+      <a routerLink="/main/like-list">like-list</a>
+    </li>
+    <li class="me-3">
+      <a routerLink="/main/personal-profile">personal-profile</a>
+    </li>
+  </ul>
 
-<div class="custom-bd-b-1 bd-black">
-  <app-header></app-header>
-</div>
-<div class="main-wrapper custom-bg-primary pt-md-5 pt-3">
-  <main class="container">
-    <div class="row">
-      <div class="col-12 col-lg-8">
-        <router-outlet></router-outlet>
-        <!-- <div class="mb-3" hidden>
-          <app-post-personal-profile></app-post-personal-profile>
+  <div class="custom-bd-b-1 bd-black">
+    <app-header></app-header>
+  </div>
+  <div class="main-wrapper custom-bg-primary pt-md-5 pt-3">
+    <main class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <router-outlet></router-outlet>
+          <!-- <div class="mb-3" hidden>
+            <app-post-personal-profile></app-post-personal-profile>
+          </div>
+          <div class="mb-3" hidden>
+            <app-post-empty hidden></app-post-empty>
+          </div>
+          <div hidden>
+            <app-post-list hidden></app-post-list>
+          </div>
+          <div >
+            <app-following></app-following>
+          </div>
+          <div hidden>
+            <app-post-edit></app-post-edit>
+          </div>
+          <div hidden>
+            <app-like-list></app-like-list>
+          </div>
+          <div>
+            <app-personal-profile></app-personal-profile>
+          </div> -->
         </div>
-        <div class="mb-3" hidden>
-          <app-post-empty hidden></app-post-empty>
+        <div class="col-0 col-lg-4 d-none d-lg-block">
+          <app-sidebar></app-sidebar>
         </div>
-        <div hidden>
-          <app-post-list hidden></app-post-list>
-        </div>
-        <div >
-          <app-following></app-following>
-        </div>
-        <div hidden>
-          <app-post-edit></app-post-edit>
-        </div>
-        <div hidden>
-          <app-like-list></app-like-list>
-        </div>
-        <div>
-          <app-personal-profile></app-personal-profile>
-        </div> -->
       </div>
-      <div class="col-0 col-lg-4 d-none d-lg-block">
-        <app-sidebar></app-sidebar>
+    </main>
+    <footer class="d-md-none w-100 fixed-bottom">
+      <div class="container">
+        <app-mobile-navigator-bar></app-mobile-navigator-bar>
       </div>
-    </div>
-  </main>
-  <footer class="d-md-none w-100 fixed-bottom">
-    <div class="container">
-      <app-mobile-navigator-bar></app-mobile-navigator-bar>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </div>
