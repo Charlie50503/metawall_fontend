@@ -19,8 +19,8 @@
       <img class="comment-user-photo me-2" [src]="userImgUrl" alt="用戶照片">
     </div>
     <div class="col-12 col-md-11 d-flex align-items-center">
-      <input type="text" class="comment-input custom-input-sm custom-input-black w-100 lh-sm-base bd-r-0" placeholder="留言...">
-      <button class="comment-btn bg-primary text-white lh-sm-base border border-2 bd-black" font="azeret">
+      <input type="text" class="comment-input custom-input-sm custom-input-black w-100 lh-sm-base bd-r-0" placeholder="留言..." [(ngModel)]="commentMessage">
+      <button class="comment-btn bg-primary text-white lh-sm-base border border-2 bd-black" font="azeret" (click)="sendComment()">
         留言
       </button>
     </div>
