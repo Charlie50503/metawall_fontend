@@ -22,5 +22,11 @@ export class PostService {
       ))
     }
 
+  public async searchPost(keyword: string
+  ): Promise<void> {
+    this._postList = await lastValueFrom(this.http.get<httpResponse>(API_LIST.GET.SEARCH_POST(keyword)).pipe(
+      map(response => response.data)
+    ))
+  }
 
 }
