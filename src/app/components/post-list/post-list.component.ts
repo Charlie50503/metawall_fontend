@@ -20,8 +20,15 @@ export class PostListComponent implements OnInit {
     this.initApi()
   }
 
+  ngDoCheck(): void {
+    //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
+    //Add 'implements DoCheck' to the class.
+    if(this.postList!==this.postListService.postList){
+      this.postList = this.postListService.postList
+    }
+  }
+
   async initApi(){
-    await this.postListService.getAllPost()
-    this.postList = this.postListService.postList
+    await this.postListService.getAllPost("-1")
   }
 }
