@@ -1,15 +1,15 @@
 <ul class="list-unstyled py-5 px-4 custom-bd-1 bd-black bg-white rounded-2">
   <li class="mb-4">
-    <button type="button" class="custom-btn custom-btn-primary custom-btn-primary--hover w-100 fw-bold pt-3 pb-3" font="azeret">張貼動態</button>
+    <button type="button" class="custom-btn custom-btn-primary custom-btn-primary--hover w-100 fw-bold pt-3 pb-3" font="azeret" (click)="linkToPostEdit()">張貼動態</button>
   </li>
   <li class="mb-4">
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center cursor-pointer" (click)="linkToPersonalProfile()">
       <img class=" me-3" [src]="userImgUrl" alt="">
       <p class="text-black fw-bold lh-base mb-0" font="noto">{{userProfile.nickName}}</p>
     </div>
   </li>
   <li class="mb-4">
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center cursor-pointer" (click)="linkToFollowing()">
       <button class="d-flex justify-content-center align-items-center sidebar-btn custom-btn-info custom-btn-info--hover rounded-circle custom-bd-1 bd-black me-3">
         <img class="bell-icon" src="/assets/bell-regular.svg" alt="鈴鐺">
       </button>
@@ -17,7 +17,7 @@
     </div>
   </li>
   <li class="">
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center cursor-pointer" (click)="linkToLikeList()">
       <button class="d-flex justify-content-center align-items-center sidebar-btn custom-btn-info custom-btn-info--hover rounded-circle custom-bd-1 bd-black me-3">
         <img class="like-icon" src="/assets/like.svg" alt="讚">
       </button>
