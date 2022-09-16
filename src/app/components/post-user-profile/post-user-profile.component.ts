@@ -1,5 +1,5 @@
 import { DatetimeFormatService } from './../../services/datetime-format.service';
-import { PostUserProfileService } from './../../services/post-user-profile.service';
+import { UserImgUrlService } from '../../services/user-img-url.service';
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { post } from 'src/app/interfaces/post.interface';
 @Component({
@@ -10,18 +10,19 @@ import { post } from 'src/app/interfaces/post.interface';
 export class PostUserProfileComponent implements OnInit {
   @Input() postUserProfilePhotoClass: string = "";
   @Input() set createdAt(createdAt:post["createdAt"]){
-    this._createdAt = this.datetimeFormatService.datetimeFormat(createdAt,"yyyy/MM/dd H:m") || ""
+    this.createdDatetime = this.datetimeFormatService.datetimeFormat(createdAt,"yyyy/MM/dd H:m") || ""
   }
   @Input() set creator(creator:post["creator"]){
-    this._imgUrl = this.postUserProfileService.setUserImgUrl(creator.avatar,creator.sex)
+    this.imgUrl = this.userImgUrlService.setUserImgUrl(creator.avatar,creator.sex)
+    this.nickName = creator.nickName
   }
 
-  public _imgUrl!:string;
-  public _createdAt!:string;
-  public imgUrl:string = "";
+  public imgUrl!:string;
+  public createdDatetime!:string;
+  public nickName!:string;
 
   constructor(
-    private postUserProfileService:PostUserProfileService,
+    private userImgUrlService:UserImgUrlService,
     private datetimeFormatService:DatetimeFormatService
   ) { }
 
