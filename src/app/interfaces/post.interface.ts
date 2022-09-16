@@ -1,12 +1,9 @@
+import { creator } from "./creator.interface";
+
 export interface post {
   comments:[],
   content:string,
-  creator:{
-    _id:string,
-    nickName:string,
-    avatar:string,
-    sex:"male" | "female"
-  },
+  creator:creator,
   createdAt:string,
   imgURL:string,
   likes:[],
