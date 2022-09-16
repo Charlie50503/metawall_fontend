@@ -4,9 +4,7 @@ import { post } from '../interfaces/post.interface';
   providedIn: 'root'
 })
 
-// type sex = "male" | "female"
-
-export class PostUserProfileService {
+export class UserImgUrlService {
   defaultUserImgUrl = {
     male: "/assets/male-face.svg",
     female: "/assets/female-face.svg",
