@@ -31,6 +31,7 @@ import { TokenInterceptor } from './services/http/http.interceptor.service';
 import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
+import { SuccessToastComponent } from './components/success-toast/success-toast.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { WarningToastComponent } from './components/warning-toast/warning-toast.
     PersonalProfileComponent,
     PersonalProfileEditComponent,
     PersonalProfileChangePasswordComponent,
-    WarningToastComponent
+    WarningToastComponent,
+    SuccessToastComponent
   ],
   imports: [
     BrowserModule,

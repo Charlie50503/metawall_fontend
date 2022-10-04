@@ -1,4 +1,4 @@
-import { WarningToastService } from './../../services/warning-toast.service';
+import { ToastService } from '../../services/toast.service';
 import { LikeService } from './../../services/like.service';
 import { CommentService } from './../../services/comment.service';
 import { Component, Input, OnInit } from '@angular/core';
@@ -24,7 +24,7 @@ export class PostComponent implements OnInit {
     private configService: ConfigService,
     private commentService: CommentService,
     private likeService: LikeService,
-    private warningToastService: WarningToastService
+    private toastService: ToastService
   ) { }
 
   ngOnInit(): void {
@@ -64,7 +64,7 @@ export class PostComponent implements OnInit {
             this.post = data.post
           },
           error: error => {
-            this.warningToastService.setWarningToastMessage(error.message)
+            this.toastService.setWarningToastMessage(error.message)
           }
         }
       )
@@ -75,7 +75,7 @@ export class PostComponent implements OnInit {
             this.post = data.post
           },
           error: error => {
-            this.warningToastService.setWarningToastMessage(error.message)
+            this.toastService.setWarningToastMessage(error.message)
           }
         }
       )

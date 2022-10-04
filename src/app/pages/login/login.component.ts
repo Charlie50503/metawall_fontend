@@ -1,4 +1,4 @@
-import { WarningToastService } from './../../services/warning-toast.service';
+import { ToastService } from '../../services/toast.service';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService:LoginService,
     private configService:ConfigService,
-    private warningToastService:WarningToastService,
+    private toastService:ToastService,
     private router : Router
   ) { }
 
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/main/all-post"])
       },
       error:(error)=>{
-        this.warningToastService.setWarningToastMessage(error.message)
+        this.toastService.setWarningToastMessage(error.message)
       }
     })
   }
