@@ -6,8 +6,8 @@ import { post } from '../interfaces/post.interface';
 
 export class UserImgUrlService {
   defaultUserImgUrl = {
-    male: "/assets/male-face.svg",
-    female: "/assets/female-face.svg",
+    male: "assets/male-face.svg",
+    female: "assets/female-face.svg",
   }
   constructor() { }
 
