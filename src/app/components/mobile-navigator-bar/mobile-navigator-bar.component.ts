@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mobile-navigator-bar',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobileNavigatorBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  goPostEdit(){
+    this.router.navigate(["/main/post-edit"])
+  }
+  goAllPost(){
+    this.router.navigate(["/main/all-post"])
+  }
+  goFollowList(){
+    this.router.navigate(["/main/following"])
+  }
+  goLikeList(){
+    this.router.navigate(["/main/like-list"])
   }
 
 }
