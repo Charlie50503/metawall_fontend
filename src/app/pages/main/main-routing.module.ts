@@ -6,11 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FollowingComponent } from 'src/app/components/following/following.component';
 import { PostListComponent } from 'src/app/components/post-list/post-list.component';
 import { MainComponent } from './main.component';
+import { AuthGuard } from 'src/app/router-guard/auth-guard.service';
 import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
 
 const routes: Routes = [
   {
     path: "main", component: MainComponent,
+    canActivate: [AuthGuard],
     resolve: {
       userProfile: MainResolver
     },
