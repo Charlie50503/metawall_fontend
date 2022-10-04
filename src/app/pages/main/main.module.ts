@@ -1,8 +1,8 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
-import { ConfigService } from 'src/app/services/config.service';
+import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
 
 
 @NgModule({
@@ -11,14 +11,8 @@ import { ConfigService } from 'src/app/services/config.service';
     CommonModule,
     MainRoutingModule
   ],
-  providers:[
-    ConfigService,
-    {
-      provide:APP_INITIALIZER,
-      useFactory:(configService:ConfigService) => function() { return configService.load()},
-      deps:[ConfigService],
-      multi:true,
-    },
-  ]
+  providers: [
+    MainResolver
+  ],
 })
 export class MainModule { }
