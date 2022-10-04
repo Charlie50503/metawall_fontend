@@ -1,6 +1,6 @@
 <app-main-header-primary title="我按讚的貼文"></app-main-header-primary>
 <ul class="list-unstyled mb-0">
   <li *ngFor="let post of posts;let idx=index" class="" [class]="{'mb-3':idx!==(posts.length-1)}">
-    <app-like-user [creator]="post.creator" [createdAt]="post.createdAt"></app-like-user>
+    <app-like-user (updateLikeList)="updateLikeList()" [postId]="post._id" [creator]="post.creator" [createdAt]="post.createdAt"></app-like-user>
   </li>
 </ul>

@@ -24,4 +24,8 @@ export class LikeListComponent implements OnInit {
       this.posts = data
     })
   }
+
+  updateLikeList(){
+    this.getLikeList()
+  }
 }
