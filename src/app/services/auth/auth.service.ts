@@ -1,6 +1,7 @@
+import { ConfigService } from './../config.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { httpResponse } from 'src/app/interfaces/http.interface';
 import API_LIST from '../api/api-list';
 
@@ -9,18 +10,21 @@ import API_LIST from '../api/api-list';
 })
 export class AuthService {
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private configService: ConfigService
   ) { }
 
   public isAuthenticated(
-    ): Observable<boolean> {
-      return this.http.get<httpResponse>(API_LIST.GET.CHECK_IS_USER).pipe(
-        map(response => {
-          if(response.status!=="success") {
-            throw new Error(response.message);
-          }
-          return true
-        })
-      );
-    }
+  ): Observable<boolean> {
+    return this.http.get<httpResponse>(API_LIST.GET.CHECK_IS_USER).pipe(
+      map(response => {
+        if (response.status !== "success") {
+          throw new Error(response.message);
+        }
+        return response.data._id
+      }),
+      tap(id => this.configService.setId(id)),
+      tap(_ => true)
+    );
+  }
 }
