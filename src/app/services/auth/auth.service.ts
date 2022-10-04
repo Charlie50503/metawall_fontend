@@ -1,3 +1,4 @@
+import { Router, RouterModule } from '@angular/router';
 import { ConfigService } from './../config.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,6 +12,7 @@ import API_LIST from '../api/api-list';
 export class AuthService {
   constructor(
     private http: HttpClient,
+    private router : Router,
     private configService: ConfigService
   ) { }
 
@@ -19,7 +21,7 @@ export class AuthService {
     return this.http.get<httpResponse>(API_LIST.GET.CHECK_IS_USER).pipe(
       map(response => {
         if (response.status !== "success") {
-          throw new Error(response.message);
+          return this.router.navigate(["/login"])
         }
         return response.data._id
       }),

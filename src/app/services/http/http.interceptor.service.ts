@@ -6,28 +6,30 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-// import { AuthService } from './auth/auth.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  token:string = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjJjZDE0YjQ4YjUxNGUxZjNmMTZhOCIsImlhdCI6MTY2MzIzODkzOCwiZXhwIjoxNjYzODQzNzM4fQ.Tv_AeJSo68snokhVavmFmDKco9Ovqjk2YHsw-heebCU`;
+  // token:string = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjU4ZmFiYjU1OGI4NDhmN2JmZmY5OCIsImlhdCI6MTY2NDg1OTI5MSwiZXhwIjoxNjY1NDY0MDkxfQ.Qy6OCTI_xiM0GdehVe5mSe1kSuLrLMCYz6mMksjYU1E`;
+  token:string = "";
   apiURL:string = environment.apiURL;
 
   constructor(
-    // public auth: AuthService
+    private router: Router
     ) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+    this.token = localStorage.getItem("token") || "";
+
     request = request.clone({
       url:`${this.apiURL}${request.url}`,
       setHeaders: {
-        // Authorization: `Bearer ${this.auth.getToken()}`
         Authorization: `Bearer ${this.token}`,
       }
     });
 
-    return next.handle(request);
+    return next.handle(request)
   }
 }
