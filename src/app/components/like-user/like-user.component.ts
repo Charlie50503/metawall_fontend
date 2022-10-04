@@ -1,3 +1,4 @@
+import { ToastService } from './../../services/toast.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { post } from 'src/app/interfaces/post.interface';
 import { DatetimeFormatService } from 'src/app/services/datetime-format.service';
@@ -26,7 +27,8 @@ export class LikeUserComponent implements OnInit {
   constructor(
     private userImgUrlService:UserImgUrlService,
     private datetimeFormatService:DatetimeFormatService,
-    private likeService:LikeService
+    private likeService:LikeService,
+    private toastService:ToastService
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class LikeUserComponent implements OnInit {
 
   deleteLike(){
     this.likeService.deleteLike(this.postId).subscribe((data)=>{
-      alert("success")
+      this.toastService.setSuccessToastMessage("刪除成功")
       this.updateLikeList.emit()
     })
   }

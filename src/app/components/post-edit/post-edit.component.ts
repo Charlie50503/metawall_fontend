@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UploadService } from 'src/app/services/upload.service';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class PostEditComponent implements OnInit {
   constructor(
     private uploadService:UploadService,
     private postCreateService:PostCreateService,
+    private toastService:ToastService,
     private router :Router
   ) { }
 
@@ -27,7 +29,7 @@ export class PostEditComponent implements OnInit {
 
   createPost() {
     this.postCreateService.createPost(this.postForm.value).subscribe(data=>{
-      alert("success")
+      this.toastService.setSuccessToastMessage("新增成功")
       this.router.navigate(["/main/all-post"])
     })
   }

@@ -34,5 +34,5 @@ export class SuccessToastComponent implements OnInit {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     this.subscription.unsubscribe()
-  }s
+  }
 }
