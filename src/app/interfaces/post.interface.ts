@@ -7,7 +7,7 @@ export interface post {
   content:string,
   creator:creator,
   createdAt:string,
-  imgURL:string,
+  imgUrl:string,
   likes:Array<user>,
   _id:string
 }

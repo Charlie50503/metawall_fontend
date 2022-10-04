@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./post-image.component.scss']
 })
 export class PostImageComponent implements OnInit {
-  @Input() imgUrl!:string;
+  @Input() imgUrl:string = "";
   constructor() { }
 
   ngOnInit(): void {

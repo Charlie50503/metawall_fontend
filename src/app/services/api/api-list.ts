@@ -6,9 +6,11 @@ const API_LIST = {
     CHECK_IS_USER:`/user/check-is-user`
   },
   POST:{
+    CREATE_POST:`/post/create-post`,
     COMMENT_CREATE: (postId:string) => `/comment/create/${postId}`,
     ADD_LIKE: (postId:string) => `/like/${postId}`,
-    LOGIN_IN:`/user/sign-in`
+    LOGIN_IN:`/user/sign-in`,
+    UPLOAD:`/upload`
   },
   DELETE:{
     DELETE_LIKE: (postId:string) => `/like/${postId}`

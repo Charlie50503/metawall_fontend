@@ -5,8 +5,8 @@
   <p class="" font="noto">
     {{post.content}}
   </p>
-  <div class="mb-3 pb-1" *ngIf="post.imgURL!==''">
-    <app-post-image [imgUrl]="post.imgURL"></app-post-image>
+  <div class="mb-3 pb-1" *ngIf="post.imgUrl!==''">
+    <app-post-image [imgUrl]="post.imgUrl"></app-post-image>
   </div>
   <div class="d-flex align-items-center mb-3 pb-1">
     <div class="post-like-btn d-inline-flex rounded-5 me-2" (click)="toggleLike()">
