@@ -1,14 +1,14 @@
 <div class="d-flex bg-white border border-2 bd-black box-shadow-d-2 box-shadow-black rounded-2 p-3">
   <div class="d-flex align-items-center m-auto me-3">
-    <img class="like-user-photo" src="/assets/user.png" alt="">
+    <img class="like-user-photo" [src]="imgUrl" alt="post creator photo">
   </div>
   <div class="d-flex justify-content-between w-100">
     <div>
       <p class="lh-base mb-0" font="noto">
-        愛爾敏
+        {{nickName}}
       </p>
       <p class="text-gray-1100 lh-m-base fs-7 mb-0" font="noto">
-        發文時間：2022/2/11 12:00
+        發文時間：{{createdDatetime}}
       </p>
     </div>
     <div class="h-100 d-flex align-items-center fs-7 lh-m-base me-3" font="noto">

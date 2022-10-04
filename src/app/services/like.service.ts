@@ -45,4 +45,15 @@ export class LikeService {
       })
     );
   }
+
+  public getLikeList(userId:string):Observable<post[]>{
+    return this.http.get<httpResponse>(API_LIST.GET.LIKE_LIST(userId)).pipe(
+      map(response => {
+        if(response.status!=="success") {
+          throw new Error(response.message);
+        }
+        return response.data
+      })
+    );
+  }
 }

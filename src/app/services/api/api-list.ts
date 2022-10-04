@@ -3,7 +3,8 @@ const API_LIST = {
     ALL_POST: (sort:string) => `/post/all-post?sort=${sort}`,
     SEARCH_POST: (keyword:string,sort:string) => `/post/?q=${keyword}&sort=${sort}`,
     USER_PROFILE: (userId:string) => `/user/profile/${userId}`,
-    CHECK_IS_USER:`/user/check-is-user`
+    CHECK_IS_USER:`/user/check-is-user`,
+    LIKE_LIST:(userId:string) => `/like/person-post/${userId}`,
   },
   POST:{
     CREATE_POST:`/post/create-post`,
