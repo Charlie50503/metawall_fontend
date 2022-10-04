@@ -29,6 +29,7 @@ import { PersonalProfileChangePasswordComponent } from './components/personal-pr
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/http/http.interceptor.service';
 import { DatePipe } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
 
 @NgModule({
@@ -63,7 +64,8 @@ import { WarningToastComponent } from './components/warning-toast/warning-toast.
     AppRoutingModule,
     HttpClientModule,
     MainModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     DatePipe,
