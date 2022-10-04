@@ -57,6 +57,7 @@ import { WarningToastComponent } from './components/warning-toast/warning-toast.
     LikeUserComponent,
     PersonalProfileComponent,
     PersonalProfileEditComponent,
+    PersonalProfileChangePasswordComponent,
     WarningToastComponent
   ],
   imports: [
