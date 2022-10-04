@@ -29,7 +29,7 @@ import { PersonalProfileChangePasswordComponent } from './components/personal-pr
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './services/http/http.interceptor.service';
 import { DatePipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { FormsModule } from '@angular/forms';
     LikeUserComponent,
     PersonalProfileComponent,
     PersonalProfileEditComponent,
-    PersonalProfileChangePasswordComponent
+    WarningToastComponent
   ],
   imports: [
     BrowserModule,
