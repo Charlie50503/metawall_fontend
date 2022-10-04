@@ -11,6 +11,10 @@ import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
 
 const routes: Routes = [
   {
+    path: "main",
+    redirectTo: "main/all-post"
+  },
+  {
     path: "main", component: MainComponent,
     canActivate: [AuthGuard],
     resolve: {
