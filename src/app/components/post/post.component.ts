@@ -61,7 +61,6 @@ export class PostComponent implements OnInit {
       this.likeService.addLike(this.post._id).subscribe(
         {
           next: data => {
-
             this.post = data.post
           },
           error: error => {
