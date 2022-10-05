@@ -21,7 +21,7 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    this.token = localStorage.getItem("token") || "";
+    this.token = localStorage.getItem("metawall-token") || "";
 
     request = request.clone({
       url:`${this.apiURL}${request.url}`,

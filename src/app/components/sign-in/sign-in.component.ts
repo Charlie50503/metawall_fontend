@@ -35,7 +35,7 @@ export class SignInComponent implements OnInit {
     }
     this.loginService.signIn(parmas).subscribe({
       next:(data)=>{
-        localStorage.setItem("token",data.token)
+        localStorage.setItem("metawall-token",data.token)
         this.configService.setId(data._id)
         this.router.navigate(["/main/all-post"])
       },
