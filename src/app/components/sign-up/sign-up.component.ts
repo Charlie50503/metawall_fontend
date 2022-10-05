@@ -11,12 +11,25 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
+  get nickName() : FormControl {
+    return this.signUpForm.get("nickName") as FormControl;
+  }
+  get email() : FormControl {
+    return this.signUpForm.get("email") as FormControl;
+  }
+  get password() : FormControl {
+    return this.signUpForm.get("password") as FormControl;
+  }
+  get confirmPassword() : FormControl {
+    return this.signUpForm.get("confirmPassword") as FormControl;
+  }
+
   @Output() isSignIn = new EventEmitter<boolean>();
   signUpForm: FormGroup = new FormGroup({
     nickName: new FormControl("", [Validators.required, Validators.minLength(2)]),
     email: new FormControl("", [Validators.required, Validators.email]),
-    password: new FormControl("", [Validators.required,Validators.minLength(8)]),
-    confirmPassword: new FormControl("", [Validators.required,Validators.minLength(8)]),
+    password: new FormControl("", [Validators.required,Validators.minLength(8),Validators.pattern(/[a-zA-Z]/)]),
+    confirmPassword: new FormControl("", [Validators.required,Validators.minLength(8),Validators.pattern(/[a-zA-Z]/)]),
   });
 
   errorMessage = "";

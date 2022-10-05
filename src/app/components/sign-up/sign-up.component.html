@@ -2,15 +2,19 @@
   <ul class="list-unstyled">
     <li class="mb-3">
       <input type="text" name="" id="" class="custom-input custom-input-black w-100" placeholder="匿稱" formControlName="nickName">
+      <p class="fz-7 lh-m-base text-red-1100 mt-1 mb-0" font="noto" *ngIf="nickName?.invalid && nickName?.touched">暱稱至少 2 個字元以上</p>
     </li>
     <li class="mb-3">
       <input type="email" name="" id="" class="custom-input custom-input-black w-100" placeholder="Email" formControlName="email">
+      <p class="fz-7 lh-m-base text-red-1100 mt-1 mb-0" font="noto" *ngIf="email?.invalid && email?.touched">請輸入正確的email格式</p>
     </li>
     <li class="mb-3">
       <input type="password" name="" id="" class="custom-input custom-input-black w-100" placeholder="密碼" formControlName="password">
+      <p class="fz-7 lh-m-base text-red-1100 mt-1 mb-0" font="noto" *ngIf="password?.invalid && password?.touched">密碼需至少 8 碼以上，並英數混合</p>
     </li>
     <li class="mb-3">
       <input type="password" name="" id="" class="custom-input custom-input-black w-100" placeholder="確認密碼" formControlName="confirmPassword">
+      <p class="fz-7 lh-m-base text-red-1100 mt-1 mb-0" font="noto" *ngIf="confirmPassword?.invalid && confirmPassword?.touched">密碼需至少 8 碼以上，並英數混合</p>
     </li>
     <li class="mb-3 d-flex justify-content-center" *ngIf="errorMessage!==''">
       <p class="fz-7 lh-m-base text-red-1100 mb-0" font="noto">{{ errorMessage }}</p>
