@@ -1,1 +1,25 @@
-<p>sign-up works!</p>
+<form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+  <ul class="list-unstyled">
+    <li class="mb-3">
+      <input type="text" name="" id="" class="custom-input custom-input-black w-100" placeholder="匿稱" formControlName="nickName">
+    </li>
+    <li class="mb-3">
+      <input type="email" name="" id="" class="custom-input custom-input-black w-100" placeholder="Email" formControlName="email">
+    </li>
+    <li class="mb-3">
+      <input type="password" name="" id="" class="custom-input custom-input-black w-100" placeholder="密碼" formControlName="password">
+    </li>
+    <li class="mb-3">
+      <input type="password" name="" id="" class="custom-input custom-input-black w-100" placeholder="確認密碼" formControlName="confirmPassword">
+    </li>
+    <li class="mb-3 d-flex justify-content-center" *ngIf="errorMessage!==''">
+      <p class="fz-7 lh-m-base text-red-1100 mb-0" font="noto">{{ errorMessage }}</p>
+    </li>
+    <li class="mb-3">
+      <button type="submit" [disabled]="!signUpForm.valid" class="custom-btn-secondary-disabled custom-btn custom-btn-primary custom-btn-primary--hover w-100 fw-bold pt-3 pb-3" font="azeret">註冊</button>
+    </li>
+    <li class="text-center">
+      <a role="button" class="text-dark text-decoration-none custom-link-primary--hover text-underline--hover" font="azeret" (click)="goSignInPage()">登入</a>
+    </li>
+  </ul>
+</form>
