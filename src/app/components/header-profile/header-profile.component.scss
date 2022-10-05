@@ -3,3 +3,22 @@
   height: 30px;
   width: 30px;
 }
+.navigator-dropdown {
+  right: 0;
+  z-index:11;
+}
+
+.navigator-dropdown-btn {
+  padding: 8px 0px;
+  width: 182px;
+  border-bottom: 0px !important;
+  background: #fff;
+}
+
+.navigator-dropdown-btn-last-child {
+  border-bottom: 2px solid #000400 !important;
+}
+
+.navigator-dropdown-btn:hover {
+  background: #efece7;
+}
