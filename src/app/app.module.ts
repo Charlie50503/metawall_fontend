@@ -32,6 +32,7 @@ import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
 import { SuccessToastComponent } from './components/success-toast/success-toast.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,8 @@ import { SuccessToastComponent } from './components/success-toast/success-toast.
     PersonalProfileEditComponent,
     PersonalProfileChangePasswordComponent,
     WarningToastComponent,
+    SuccessToastComponent,
+    SignUpComponent,
     SuccessToastComponent
   ],
   imports: [
