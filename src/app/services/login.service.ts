@@ -17,7 +17,7 @@ export class LoginService {
 
   public signIn(body: signInBody
     ): Observable<signInResponse> {
-      return this.http.post<httpResponse>(API_LIST.POST.LOGIN_IN,body).pipe(
+    return this.http.post<httpResponse>(API_LIST.POST.SIGN_IN, body).pipe(
         map(response => {
           if(response.status!=="success") {
             throw new Error(response.message);

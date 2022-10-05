@@ -10,7 +10,8 @@ const API_LIST = {
     CREATE_POST:`/post/create-post`,
     COMMENT_CREATE: (postId:string) => `/comment/create/${postId}`,
     ADD_LIKE: (postId:string) => `/like/${postId}`,
-    LOGIN_IN:`/user/sign-in`,
+    SIGN_IN:`/user/sign-in`,
+    SIGN_UP:`/user/sign-up`,
     UPLOAD:`/upload`
   },
   DELETE:{
