@@ -33,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
 import { SuccessToastComponent } from './components/success-toast/success-toast.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     WarningToastComponent,
     SuccessToastComponent,
     SignUpComponent,
-    SuccessToastComponent
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
