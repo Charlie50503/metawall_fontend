@@ -1,4 +1,3 @@
-import { ToastService } from '../../services/toast.service';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -16,10 +15,11 @@ export class LoginComponent implements OnInit {
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required,Validators.minLength(8)]),
   });
+
+  errorMessage:string = "";
   constructor(
     private loginService:LoginService,
     private configService:ConfigService,
-    private toastService:ToastService,
     private router : Router
   ) { }
 
@@ -38,7 +38,9 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/main/all-post"])
       },
       error:(error)=>{
-        this.toastService.setWarningToastMessage(error.message)
+        console.log(error);
+        this.errorMessage = error.message
+        // this.toastService.setWarningToastMessage(error.message)
       }
     })
   }
