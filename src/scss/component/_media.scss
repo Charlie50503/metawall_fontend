@@ -15,6 +15,23 @@
   z-index: -1;
 }
 
+.media-secondary-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.media-secondary-wrapper::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: white;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  border: 2px solid $black;
+  z-index: -1;
+}
+
 .media-primary-content {
   border-top: 2px solid $black;
   border-right: 2px solid $black;
