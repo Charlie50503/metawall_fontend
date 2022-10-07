@@ -10,26 +10,21 @@ import API_LIST from './api/api-list';
   providedIn: 'root'
 })
 export class FollowService {
-  _following!: following;
 
-  followingChanged = new Subject<following>();
-  get following() {
-    return this._following
-  }
   constructor(
     private http: HttpClient
   ) { }
-
-  setUer(following: following) {
-    this._following = following
-    this.followingChanged.next(this._following)
-  }
 
   public getFollowing(
     userId: string
   ): Observable<followResponse> {
     return this.http.get<httpResponse>(API_LIST.GET.FOLLOWING(userId)).pipe(
-      map(response => response.data)
+      map(response => {
+        if(response.status!=="success") {
+          throw new Error(response.message);
+        }
+        return response.data
+      })
     )
   }
 
@@ -37,7 +32,24 @@ export class FollowService {
     userId: string
   ): Observable<followResponse> {
     return this.http.post<httpResponse>(API_LIST.POST.FOLLOWING(userId),null).pipe(
-      map(response => response.data)
+      map(response => {
+        if(response.status!=="success") {
+          throw new Error(response.message);
+        }
+        return response.data
+      })
+    )
+  }
+  public deleteFollowing(
+    userId: string
+  ): Observable<followResponse> {
+    return this.http.delete<httpResponse>(API_LIST.POST.FOLLOWING(userId)).pipe(
+      map(response => {
+        if(response.status!=="success") {
+          throw new Error(response.message);
+        }
+        return response.data
+      })
     )
   }
 }

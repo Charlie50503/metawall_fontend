@@ -19,7 +19,8 @@ const API_LIST = {
     FOLLOWING:(userId:string) => `/follow/${userId}`
   },
   DELETE:{
-    DELETE_LIKE: (postId:string) => `/like/${postId}`
+    DELETE_LIKE: (postId:string) => `/like/${postId}`,
+    FOLLOWING:(userId:string) => `/follow/${userId}`
   }
 }
 
