@@ -9,6 +9,7 @@ import { MainComponent } from './main.component';
 import { AuthGuard } from 'src/app/router-guard/auth-guard.service';
 import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
 import { AllPostResolver } from 'src/app/router-resolve/all-post.resolver.service';
+import { PersonPostResolver } from 'src/app/router-resolve/person-post.resolver.service';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
       { path: 'all-post', component: PostListComponent,
         resolve: {
           postList: AllPostResolver
+        },
+      },
+      { path: 'person-post', component: PostListComponent,
+        resolve: {
+          postList: PersonPostResolver
         },
       },
       { path: 'following', component: FollowingComponent },

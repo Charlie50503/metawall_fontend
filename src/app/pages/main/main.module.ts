@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
 import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
 import { AllPostResolver } from 'src/app/router-resolve/all-post.resolver.service';
+import { PersonPostResolver } from 'src/app/router-resolve/person-post.resolver.service';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AllPostResolver } from 'src/app/router-resolve/all-post.resolver.servic
   ],
   providers: [
     MainResolver,
-    AllPostResolver
+    AllPostResolver,
+    PersonPostResolver
   ],
 })
 export class MainModule { }
