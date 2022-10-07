@@ -7,6 +7,7 @@ const API_LIST = {
     USER_PROFILE: (userId:string) => `/user/profile/${userId}`,
     CHECK_IS_USER:`/user/check-is-user`,
     LIKE_LIST:(userId:string) => `/like/person-post/${userId}`,
+    FOLLOWING:(userId:string) => `/follow/${userId}`
   },
   POST:{
     CREATE_POST:`/post/create-post`,
