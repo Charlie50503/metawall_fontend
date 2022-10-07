@@ -28,7 +28,7 @@ const routes: Routes = [
           postList: AllPostResolver
         },
       },
-      { path: 'person-post', component: PostListComponent,
+      { path: 'person-post/:userId', component: PostListComponent,
         resolve: {
           postList: PersonPostResolver
         },

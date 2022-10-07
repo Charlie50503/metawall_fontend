@@ -36,7 +36,6 @@ export class PostUserProfileComponent implements OnInit {
   }
 
   public goPersonPostPage(){
-    this.postListService.setTargetUserId(this.creatorId);
-    this.router.navigate(["/main/person-post"])
+    this.router.navigate(["/main/person-post",this.creatorId])
   }
 }
