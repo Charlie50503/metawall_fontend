@@ -18,6 +18,10 @@
   background: $red-1000;
 }
 
+.bg-red-1000--hover:hover {
+  background: tint($red-1000, 30%) !important;
+}
+
 .bg-primary--hover:hover {
   background: $blue !important;
 }
