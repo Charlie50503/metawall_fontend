@@ -27,7 +27,7 @@ export class HeaderProfileComponent implements OnInit {
     this.isShowNavigatorDropDown = false
   }
   goPersonPost() {
-    // this.router.navigate(["/main/personal-profile"])
+    this.router.navigate(["/main/owner-post",this.configService.id])
     this.isShowNavigatorDropDown = false
   }
   logout() {

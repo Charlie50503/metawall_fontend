@@ -34,6 +34,11 @@ const routes: Routes = [
           postList: PersonPostResolver
         },
       },
+      { path: 'owner-post/:userId', component: PostListComponent,
+        resolve: {
+          postList: PersonPostResolver
+        },
+      },
       { path: 'post/:postId', component: PostListComponent,
         resolve: {
           postList: PostResolver
