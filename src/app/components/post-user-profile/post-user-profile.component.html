@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center">
-  <img class="post-user-profile-photo" [class]="postUserProfilePhotoClass" [src]="imgUrl" alt="用戶大頭貼">
+  <img class="post-user-profile-photo cursor-pointer" [class]="postUserProfilePhotoClass" [src]="imgUrl" alt="用戶大頭貼" (click)="goPersonPostPage()">
   <div class="d-flex flex-column">
-    <p class="text-black lh-base mb-0" font="noto">{{nickName}}</p>
+    <p class="text-black lh-base cursor-pointer underline--hover mb-0" font="noto" (click)="goPersonPostPage()">{{nickName}}</p>
     <p class="text-gray-1100 fs-8 mb-0">
       <time>{{createdDatetime}}</time>
     </p>
