@@ -4,6 +4,7 @@ import { post } from 'src/app/interfaces/post.interface';
 import { DatetimeFormatService } from 'src/app/services/datetime-format.service';
 import { LikeService } from 'src/app/services/like.service';
 import { UserImgUrlService } from 'src/app/services/user-img-url.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-like-user',
@@ -28,7 +29,8 @@ export class LikeUserComponent implements OnInit {
     private userImgUrlService:UserImgUrlService,
     private datetimeFormatService:DatetimeFormatService,
     private likeService:LikeService,
-    private toastService:ToastService
+    private toastService:ToastService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -39,5 +41,9 @@ export class LikeUserComponent implements OnInit {
       this.toastService.setSuccessToastMessage("刪除成功")
       this.updateLikeList.emit()
     })
+  }
+
+  goViewPost(){
+    this.router.navigate(["/main/post",this.postId])
   }
 }
