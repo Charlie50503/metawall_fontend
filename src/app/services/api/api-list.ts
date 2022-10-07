@@ -15,7 +15,8 @@ const API_LIST = {
     ADD_LIKE: (postId:string) => `/like/${postId}`,
     SIGN_IN:`/user/sign-in`,
     SIGN_UP:`/user/sign-up`,
-    UPLOAD:`/upload`
+    UPLOAD:`/upload`,
+    FOLLOWING:(userId:string) => `/follow/${userId}`
   },
   DELETE:{
     DELETE_LIKE: (postId:string) => `/like/${postId}`
