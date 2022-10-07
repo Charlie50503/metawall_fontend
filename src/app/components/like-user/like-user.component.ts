@@ -19,9 +19,11 @@ export class LikeUserComponent implements OnInit {
   @Input() set creator(creator:post["creator"]){
     this.imgUrl = this.userImgUrlService.setUserImgUrl(creator.avatar,creator.sex)
     this.nickName = creator.nickName
+    this.creatorId = creator._id
   }
 
   @Output() updateLikeList: EventEmitter<any> = new EventEmitter();
+  public creatorId!:string;
   public imgUrl!:string;
   public createdDatetime!:string;
   public nickName!:string;
@@ -45,5 +47,9 @@ export class LikeUserComponent implements OnInit {
 
   goViewPost(){
     this.router.navigate(["/main/post",this.postId])
+  }
+
+  goPersonalPostPage(){
+    this.router.navigate(["/main/person-post",this.creatorId])
   }
 }

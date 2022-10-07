@@ -53,6 +53,11 @@ export class PostListComponent implements OnInit {
     return true
   }
 
+  isShowSearchBar(){
+    if(this.router.url.startsWith("/main/post")) {return false}
+    return true
+  }
+
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
