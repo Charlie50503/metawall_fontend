@@ -1,6 +1,4 @@
-export interface creator {
-    _id:string,
-    nickName:string,
-    avatar:string,
-    sex:"male" | "female"
+import { user } from "./user.interface";
+
+export interface creator extends user {
 }
