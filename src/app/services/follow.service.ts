@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, Subject } from 'rxjs';
 import { following } from '../interfaces/follow.interface';
 import { httpResponse } from '../interfaces/http.interface';
-import { getFollowResponse } from '../interfaces/response/get-follow';
+import { followResponse } from '../interfaces/response/follow';
 import API_LIST from './api/api-list';
 
 @Injectable({
@@ -27,8 +27,16 @@ export class FollowService {
 
   public getFollowing(
     userId: string
-  ): Observable<getFollowResponse> {
+  ): Observable<followResponse> {
     return this.http.get<httpResponse>(API_LIST.GET.FOLLOWING(userId)).pipe(
+      map(response => response.data)
+    )
+  }
+
+  public addFollowing(
+    userId: string
+  ): Observable<followResponse> {
+    return this.http.post<httpResponse>(API_LIST.POST.FOLLOWING(userId),null).pipe(
       map(response => response.data)
     )
   }
