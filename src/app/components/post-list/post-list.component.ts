@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { post } from 'src/app/interfaces/post.interface';
 import { PostListService } from 'src/app/services/post-list.service';
 import { user } from 'src/app/interfaces/user.interface';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -16,6 +16,7 @@ export class PostListComponent implements OnInit {
   constructor(
     private postListService: PostListService,
     private route: ActivatedRoute,
+    public router : Router
   ) { }
 
   userProfile!: user;
