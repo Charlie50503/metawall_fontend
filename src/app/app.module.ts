@@ -70,9 +70,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
   ],
   imports: [
     BrowserModule,
+    MainModule,
     AppRoutingModule,
     HttpClientModule,
-    MainModule,
     FormsModule,
     ReactiveFormsModule
   ],
