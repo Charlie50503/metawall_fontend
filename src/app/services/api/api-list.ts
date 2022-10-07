@@ -1,5 +1,6 @@
 const API_LIST = {
   GET: {
+    GET_ONE_POST: (postId:string) => `/post/${postId}`,
     ALL_POST: (sort:string) => `/post/all-post?sort=${sort}`,
     PERSON_POST: (userId:string,sort:string) => `/post/person-post/${userId}?&sort=${sort}`,
     SEARCH_PERSON_POST: (userId:string,keyword:string,sort:string) => `/post/search-person-post/${userId}?q=${keyword}&sort=${sort}`,
