@@ -36,9 +36,6 @@ export class PostPersonalProfileComponent implements OnInit {
       this.user = newUser
       this.imgUrl = this.userImgUrlService.setUserImgUrl(this.user.avatar, this.user.sex)
     })
-    this.followService.followingChanged.subscribe(newFollowing => {
-      this.targetFollowing = newFollowing
-    })
     this.userService.getUserProfile(userId).subscribe(user => {
       this.user = user
       this.imgUrl = this.userImgUrlService.setUserImgUrl(this.user.avatar, this.user.sex)
@@ -56,7 +53,6 @@ export class PostPersonalProfileComponent implements OnInit {
       console.log("data",data);
 
       if (data.following) {
-
         this.ownerFollowing = data.following
         console.log("this ownerFollowing",this.ownerFollowing);
       }
@@ -88,9 +84,6 @@ export class PostPersonalProfileComponent implements OnInit {
   }
 
   checkShowFollowBtn(){
-    console.log("ownerFollowing",this.ownerFollowing);
-    console.log("this.user._id",this.user?._id);
-    console.log(!this.ownerFollowing.includes(this.user?._id));
     this.isShowFollowBtn = !this.ownerFollowing.includes(this.user?._id)
   }
 
