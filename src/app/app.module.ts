@@ -34,6 +34,7 @@ import { WarningToastComponent } from './components/warning-toast/warning-toast.
 import { SuccessToastComponent } from './components/success-toast/success-toast.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     SuccessToastComponent,
     SignUpComponent,
     SignInComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
