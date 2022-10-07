@@ -8,6 +8,7 @@ import { PostListComponent } from 'src/app/components/post-list/post-list.compon
 import { MainComponent } from './main.component';
 import { AuthGuard } from 'src/app/router-guard/auth-guard.service';
 import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
+import { AllPostResolver } from 'src/app/router-resolve/all-post.resolver.service';
 
 const routes: Routes = [
   {
@@ -21,7 +22,11 @@ const routes: Routes = [
       userProfile: MainResolver
     },
     children: [
-      { path: 'all-post', component: PostListComponent },
+      { path: 'all-post', component: PostListComponent,
+        resolve: {
+          postList: AllPostResolver
+        },
+      },
       { path: 'following', component: FollowingComponent },
       { path: 'post-edit', component: PostEditComponent },
       { path: 'like-list', component: LikeListComponent },

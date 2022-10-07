@@ -1,7 +1,9 @@
+import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { post } from 'src/app/interfaces/post.interface';
 import { PostListService } from 'src/app/services/post-list.service';
 import { user } from 'src/app/interfaces/user.interface';
+import { ActivatedRoute, Route } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -9,26 +11,42 @@ import { user } from 'src/app/interfaces/user.interface';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  postList!:post[];
+  postList!: post[];
+  subscription = new Subscription();
   constructor(
-    private postListService:PostListService,
+    private postListService: PostListService,
+    private route: ActivatedRoute,
   ) { }
 
-    userProfile!:user;
+  userProfile!: user;
 
   ngOnInit(): void {
-    this.initApi()
+    this.route.data.subscribe(
+      {
+        next: (data: any) => {
+          this.postListService.setPostList(data.postList);
+        },
+        error: (error) => {
+          console.log(error);
+        }
+      }
+    )
+    this.init()
   }
 
-  ngDoCheck(): void {
-    //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
-    //Add 'implements DoCheck' to the class.
-    if(this.postList!==this.postListService.postList){
-      this.postList = this.postListService.postList
-    }
+  init() {
+    this.postList = this.postListService.postList
+    this.addInitSubscribe()
+  }
+  addInitSubscribe() {
+    this.subscription = this.postListService.postListChanged.subscribe(newPostList => {
+      this.postList = newPostList
+    })
   }
 
-  async initApi(){
-    await this.postListService.getAllPost("-1")
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe()
   }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
 import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
+import { AllPostResolver } from 'src/app/router-resolve/all-post.resolver.service';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
     MainRoutingModule
   ],
   providers: [
-    MainResolver
+    MainResolver,
+    AllPostResolver
   ],
 })
 export class MainModule { }
