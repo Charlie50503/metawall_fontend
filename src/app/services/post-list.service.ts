@@ -13,7 +13,7 @@ export class PostListService {
   postListChanged = new Subject<post[]>();
   postEmptyMessageChanged = new Subject<string>();
   private _postList!: post[];
-  private _postEmptyMessage:string = "";
+  private _postEmptyMessage: string = "";
   get postList() { return this._postList; }
   get postEmptyMessage() { return this._postEmptyMessage; }
 
@@ -39,26 +39,31 @@ export class PostListService {
 
   public getPersonPost(
     userId: string,
-    sort:string
-    ): Observable<post[]> {
-      return this.http.get<httpResponse>(API_LIST.GET.PERSON_POST(userId,sort)).pipe(
-        map(response => response.data)
-      )
-    }
+    sort: string
+  ): Observable<post[]> {
+    return this.http.get<httpResponse>(API_LIST.GET.PERSON_POST(userId, sort)).pipe(
+      map(response => response.data)
+    )
+  }
   public searchPersonPost(
     userId: string,
-    keyword:string,
-    sort:string
-    ): Observable<post[]> {
-
-      return this.http.get<httpResponse>(API_LIST.GET.SEARCH_PERSON_POST(userId,keyword,sort)).pipe(
-        map(response => response.data)
-      )
-    }
+    keyword: string,
+    sort: string
+  ): Observable<post[]> {
+    return this.http.get<httpResponse>(API_LIST.GET.SEARCH_PERSON_POST(userId, keyword, sort)).pipe(
+      map(response => response.data)
+    )
+  }
 
   public searchAllPost(keyword: string, sort: string
   ): Observable<post[]> {
     return this.http.get<httpResponse>(API_LIST.GET.SEARCH_POST(keyword, sort)).pipe(
+      map(response => response.data)
+    )
+  }
+
+  public getOnePost(postId: string): Observable<post> {
+    return this.http.get<httpResponse>(API_LIST.GET.GET_ONE_POST(postId)).pipe(
       map(response => response.data)
     )
   }

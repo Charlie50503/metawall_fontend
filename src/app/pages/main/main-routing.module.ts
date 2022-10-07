@@ -10,6 +10,7 @@ import { AuthGuard } from 'src/app/router-guard/auth-guard.service';
 import { MainResolver } from 'src/app/router-resolve/main.resolver.service';
 import { AllPostResolver } from 'src/app/router-resolve/all-post.resolver.service';
 import { PersonPostResolver } from 'src/app/router-resolve/person-post.resolver.service';
+import { PostResolver } from 'src/app/router-resolve/post.resolver.service';
 
 const routes: Routes = [
   {
@@ -31,6 +32,11 @@ const routes: Routes = [
       { path: 'person-post/:userId', component: PostListComponent,
         resolve: {
           postList: PersonPostResolver
+        },
+      },
+      { path: 'post/:postId', component: PostListComponent,
+        resolve: {
+          postList: PostResolver
         },
       },
       { path: 'following', component: FollowingComponent },
