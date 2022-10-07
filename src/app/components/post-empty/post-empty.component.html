@@ -1,18 +1,24 @@
 <div class="bg-white border border-2 bd-black rounded-2">
-  <div class="p-3 border-bottom border-b-2 bd-black ">
+  <div class="p-3 border-bottom border-b-2 bd-black">
     <ul class="list-unstyled d-flex mb-0">
       <li class="ball-wrapper">
         <div class="ball border bd-gray-1500 rounded-circle bg-red-1000"></div>
       </li>
       <li class="ball-wrapper">
-        <div class="ball border bd-gray-1500 rounded-circle bg-yellow-1000"></div>
+        <div
+          class="ball border bd-gray-1500 rounded-circle bg-yellow-1000"
+        ></div>
       </li>
       <li>
-        <div class="ball border bd-gray-1500 rounded-circle bg-yellow-1100"></div>
+        <div
+          class="ball border bd-gray-1500 rounded-circle bg-yellow-1100"
+        ></div>
       </li>
     </ul>
   </div>
   <div class="d-flex justify-content-center align-items-center">
-    <p font="noto" class="text-gray-1100 lh-base py-4  my-2">目前尚無動態，新增一則貼文吧！</p>
+    <p font="noto" class="text-gray-1100 lh-base py-4 my-2">
+      {{ emptyMessage }}
+    </p>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { PostListService } from 'src/app/services/post-list.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { post } from 'src/app/interfaces/post.interface';
 
 @Component({
   selector: 'app-post-search-bar',
@@ -33,10 +34,16 @@ export class PostSearchBarComponent implements OnInit {
     if (this.searchKeyword === "") {
       this.postListService.getAllPost(this.sort).subscribe(postList => {
         this.postListService.setPostList(postList)
+        if(this.isPostListEmpty(postList)){
+          this.setPostEmptyMessage()
+        }
       })
     } else {
       this.postListService.searchAllPost(this.searchKeyword, this.sort).subscribe(postList => {
         this.postListService.setPostList(postList)
+        if(this.isPostListEmpty(postList)){
+          this.setPostEmptyMessage()
+        }
       })
     }
   }
@@ -46,11 +53,26 @@ export class PostSearchBarComponent implements OnInit {
     if (this.searchKeyword === "") {
       this.postListService.getPersonPost(targetUserId, this.sort).subscribe(postList => {
         this.postListService.setPostList(postList)
+        if(this.isPostListEmpty(postList)){
+          this.setPostEmptyMessage()
+        }
       })
     } else {
       this.postListService.searchPersonPost(targetUserId,this.searchKeyword, this.sort).subscribe(postList => {
         this.postListService.setPostList(postList)
+        if(this.isPostListEmpty(postList)){
+          this.setPostEmptyMessage()
+        }
       })
     }
   }
+
+  isPostListEmpty(postList:post[]){
+    return postList.length===0
+  }
+
+  setPostEmptyMessage(){
+    this.postListService.setPostEmptyMessage("沒有找到搜尋的貼文！")
+  }
+
 }

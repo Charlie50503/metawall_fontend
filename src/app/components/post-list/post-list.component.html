@@ -4,8 +4,9 @@
 <div class="mb-3">
   <app-post-search-bar></app-post-search-bar>
 </div>
-<ul class="list-unstyled">
+<ul class="list-unstyled" *ngIf="postList.length > 0">
   <li *ngFor="let post of postList;let idx=index" class="mb-3" [class]="{'mb-3':idx!==(postList.length-1)}">
       <app-post [post]="post"></app-post>
   </li>
 </ul>
+<app-post-empty [hidden]="postList.length !== 0"></app-post-empty>

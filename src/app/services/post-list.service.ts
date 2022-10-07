@@ -11,8 +11,11 @@ import API_LIST from './api/api-list';
 
 export class PostListService {
   postListChanged = new Subject<post[]>();
+  postEmptyMessageChanged = new Subject<string>();
   private _postList!: post[];
+  private _postEmptyMessage:string = "";
   get postList() { return this._postList; }
+  get postEmptyMessage() { return this._postEmptyMessage; }
 
   constructor(private http: HttpClient) { }
 
@@ -20,6 +23,12 @@ export class PostListService {
     this._postList = postList
     this.postListChanged.next(this._postList)
   }
+
+  public setPostEmptyMessage(postEmptyMessage: string) {
+    this._postEmptyMessage = postEmptyMessage
+    this.postEmptyMessageChanged.next(this._postEmptyMessage)
+  }
+
 
   public getAllPost(sort: string
   ): Observable<post[]> {
@@ -41,6 +50,7 @@ export class PostListService {
     keyword:string,
     sort:string
     ): Observable<post[]> {
+
       return this.http.get<httpResponse>(API_LIST.GET.SEARCH_PERSON_POST(userId,keyword,sort)).pipe(
         map(response => response.data)
       )
