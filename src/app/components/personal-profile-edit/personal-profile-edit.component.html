@@ -1,15 +1,29 @@
 <div class="d-flex flex-column align-items-center">
   <img
-    class="personal-profile-photo mb-3"
-    src="assets/user.png"
-    alt="大頭貼"
-  /><button
+    class="personal-profile-photo mb-3 rounded-circle border border-2 bd-black"
+    [src]="avatar"
+    alt="用戶大頭貼"
+  />
+  <!-- <button
     type="button"
     class="bg-black text-white fs-6 lh-base py-2 px-4"
     font="noto"
   >
     上傳大頭照
-  </button>
+  </button> -->
+  <label
+    id="IMG_FILE"
+    class="bg-black text-white fs-6 lh-base py-2 px-4 cursor-pointer"
+    font="noto"
+  >
+    <input
+      type="file"
+      class="d-none"
+      (change)="onFileSelected($event)"
+      accept="image/png, image/jpeg"
+    />
+    上傳大頭照
+  </label>
 </div>
 <ul class="list-unstyled pb-2 mb-4">
   <li class="d-flex flex-column mb-3">
@@ -29,7 +43,13 @@
         <label class="ms-1" for="sexMale">男性</label><br />
       </li>
       <li class="d-flex align-items-center">
-        <input class="pe-2" type="radio" id="sexFemale" name="sex" value="female" />
+        <input
+          class="pe-2"
+          type="radio"
+          id="sexFemale"
+          name="sex"
+          value="female"
+        />
         <label class="ms-1" for="sexFemale">女性</label><br />
       </li>
     </ul>
