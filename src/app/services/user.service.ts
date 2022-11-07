@@ -1,3 +1,5 @@
+import { uploadPasswordResponse } from './../interfaces/response/upload-password';
+import { passwordForm } from './../interfaces/password.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, Subject } from 'rxjs';
@@ -37,6 +39,12 @@ export class UserService {
     user:user
   ): Observable<userProfileResponse>{
     return this.http.patch<httpResponse>(API_LIST.PATCH.USER_PROFILE, user).pipe(
+      map(response => response.data)
+    )
+  }
+
+  public patchUploadPassword(passwordForm:passwordForm): Observable<uploadPasswordResponse>{
+    return this.http.patch<httpResponse>(API_LIST.PATCH.UPDATE_PASSWORD, passwordForm).pipe(
       map(response => response.data)
     )
   }

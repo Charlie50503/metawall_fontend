@@ -20,7 +20,8 @@ const API_LIST = {
     FOLLOWING:(userId:string) => `/follow/${userId}`
   },
   PATCH:{
-    USER_PROFILE: `/user/profile/`
+    USER_PROFILE: `/user/profile/`,
+    UPDATE_PASSWORD: `/user/update-password`
   },
   DELETE:{
     DELETE_LIKE: (postId:string) => `/like/${postId}`,
