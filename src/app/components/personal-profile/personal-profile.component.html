@@ -11,7 +11,7 @@
 </div>
 <div class="border border-2 bd-black rounded-2 bg-white box-shadow-d-2 p-5">
   <div [hidden]="!isDisplayTab['personalProfileEdit']">
-    <app-personal-profile-edit></app-personal-profile-edit>
+    <app-personal-profile-edit [user]="user" [avatar]="avatar"></app-personal-profile-edit>
   </div>
   <div [hidden]="!isDisplayTab['personalProfileChangePassword']">
     <app-personal-profile-change-password></app-personal-profile-change-password>

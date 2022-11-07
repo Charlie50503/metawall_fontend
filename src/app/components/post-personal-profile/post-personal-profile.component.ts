@@ -41,8 +41,6 @@ export class PostPersonalProfileComponent implements OnInit {
       this.imgUrl = this.userImgUrlService.setUserImgUrl(this.user.avatar, this.user.sex)
     })
     this.followService.getFollowing(userId).subscribe(data => {
-      console.log("data",data);
-
       if (data?.following) {
         this.targetFollowing = data.following
       }else {
