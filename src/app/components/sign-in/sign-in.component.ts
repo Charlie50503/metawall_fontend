@@ -13,15 +13,16 @@ import { LoginService } from 'src/app/services/login.service';
 export class SignInComponent implements OnInit {
   signInForm: FormGroup = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
-    password: new FormControl("", [Validators.required,Validators.minLength(8)]),
+    password: new FormControl("", [Validators.required, Validators.minLength(8)]),
   });
 
   @Output() isSignUp = new EventEmitter<boolean>();
   @Output() isLoading = new EventEmitter<boolean>();
+  errorMessage: string = "";
   constructor(
-    private loginService:LoginService,
-    private configService:ConfigService,
-    private router : Router
+    private loginService: LoginService,
+    private configService: ConfigService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,8 +36,8 @@ export class SignInComponent implements OnInit {
       password: this.signInForm.value["password"]
     }
     this.loginService.signIn(parmas).subscribe({
-      next:(data)=>{
-        localStorage.setItem("metawall-token",data.token)
+      next: (data) => {
+        localStorage.setItem("metawall-token", data.token)
         this.configService.setId(data._id)
         this.router.navigate(["/main/all-post"])
         this.isLoading.emit(false);
@@ -48,7 +49,7 @@ export class SignInComponent implements OnInit {
     })
   }
 
-  goSignUpPage(){
+  goSignUpPage() {
     this.isSignUp.emit(true);
   }
 }
