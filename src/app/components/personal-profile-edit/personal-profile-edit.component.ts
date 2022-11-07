@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ConfigService } from 'src/app/services/config.service';
 import { UploadService } from 'src/app/services/upload.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-personal-profile-edit',
@@ -20,7 +21,8 @@ export class PersonalProfileEditComponent implements OnInit {
   constructor(
     private userImgUrlService: UserImgUrlService,
     private configService: ConfigService,
-    private uploadService:UploadService
+    private uploadService: UploadService,
+    private toastService: ToastService
   ) { }
 
   ngOnInit(): void {
@@ -36,11 +38,16 @@ export class PersonalProfileEditComponent implements OnInit {
         const formData = new FormData();
         formData.append("avatar", file);
 
-        this.uploadService.uploadImg(formData).subscribe(data => {
-          this.avatar = data.imgUrl
-          this.userForm.patchValue({
-            imgUrl: data.imgUrl,
-          });
+        this.uploadService.uploadImg(formData).subscribe({
+          next: data => {
+            this.avatar = data.imgUrl
+            this.userForm.patchValue({
+              imgUrl: data.imgUrl,
+            });
+          },
+          error: error => {
+            this.toastService.setWarningToastMessage(error.error.message)
+          }
         })
       }
     }
