@@ -5,6 +5,11 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { MainComponent } from './pages/main/main.component';
 
 const routes: Routes = [
+  {
+    path: "",
+    redirectTo: "main/all-post",
+    pathMatch: "full"
+  },
   { path: "login", component: LoginComponent },
   { path: "page-not-found", component: PageNotFoundComponent },
   {
