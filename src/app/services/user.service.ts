@@ -32,4 +32,12 @@ export class UserService {
         map(response => response.data)
       )
     }
+
+  public patchUserProfile(
+    user:user
+  ): Observable<userProfileResponse>{
+    return this.http.patch<httpResponse>(API_LIST.PATCH.USER_PROFILE, user).pipe(
+      map(response => response.data)
+    )
+  }
 }

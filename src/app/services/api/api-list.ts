@@ -19,6 +19,9 @@ const API_LIST = {
     UPLOAD:`/upload`,
     FOLLOWING:(userId:string) => `/follow/${userId}`
   },
+  PATCH:{
+    USER_PROFILE: `/user/profile/`
+  },
   DELETE:{
     DELETE_LIKE: (postId:string) => `/like/${postId}`,
     FOLLOWING:(userId:string) => `/follow/${userId}`
