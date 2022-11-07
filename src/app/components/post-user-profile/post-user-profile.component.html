@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center">
-  <img class="post-user-profile-photo cursor-pointer rounded-circle border border-2 bd-black" [class]="postUserProfilePhotoClass" [src]="imgUrl" alt="用戶大頭貼" (click)="goPersonPostPage()">
+  <img class="post-user-profile-photo cursor-pointer rounded-circle border border-2 bd-black object-cover" [class]="postUserProfilePhotoClass" [src]="imgUrl" alt="用戶大頭貼" (click)="goPersonPostPage()">
   <div class="d-flex flex-column">
     <p class="text-black lh-base cursor-pointer underline--hover mb-0" font="noto" (click)="goPersonPostPage()">{{nickName}}</p>
     <p class="text-gray-1100 fs-8 mb-0">
