@@ -25,6 +25,7 @@ export class SignUpComponent implements OnInit {
   }
 
   @Output() isSignIn = new EventEmitter<boolean>();
+  @Output() isLoading = new EventEmitter<boolean>();
   signUpForm: FormGroup = new FormGroup({
     nickName: new FormControl("", [Validators.required, Validators.minLength(2)]),
     email: new FormControl("", [Validators.required, Validators.email]),
@@ -43,6 +44,7 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp(){
+    this.isLoading.emit(true);
     const parmas:signUpBody = {
       nickName:this.signUpForm.value["nickName"],
       email:this.signUpForm.value["email"],
@@ -53,10 +55,12 @@ export class SignUpComponent implements OnInit {
       next:(data)=>{
         localStorage.setItem("metawall-token",data.token)
         this.configService.setId(data._id)
-        this.router.navigate(["/main/all-post"])
+        this.router.navigate(["/main/all-post"]);
+        this.isLoading.emit(false);
       },
       error:(error)=>{
-        this.errorMessage = error.message
+        this.errorMessage = error.message;
+        this.isLoading.emit(false);
       }
     })
   }

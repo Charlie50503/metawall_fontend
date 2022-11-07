@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   isSignInPage = true;
+  isLoading = false;
   constructor(
   ) { }
 
@@ -14,10 +15,14 @@ export class LoginComponent implements OnInit {
   }
 
   isSignUp(){
-    this.isSignInPage = false
+    this.isSignInPage = false;
   }
 
   isSignIn(){
-    this.isSignInPage = true
+    this.isSignInPage = true;
+  }
+
+  onLoading(value : boolean){
+    this.isLoading = value;
   }
 }

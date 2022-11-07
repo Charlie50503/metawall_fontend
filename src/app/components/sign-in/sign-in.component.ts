@@ -17,7 +17,7 @@ export class SignInComponent implements OnInit {
   });
 
   @Output() isSignUp = new EventEmitter<boolean>();
-  errorMessage:string = "";
+  @Output() isLoading = new EventEmitter<boolean>();
   constructor(
     private loginService:LoginService,
     private configService:ConfigService,
@@ -29,18 +29,21 @@ export class SignInComponent implements OnInit {
 
 
   signIn() {
-    const parmas:signInBody = {
-      email:this.signInForm.value["email"],
-      password:this.signInForm.value["password"]
+    this.isLoading.emit(true);
+    const parmas: signInBody = {
+      email: this.signInForm.value["email"],
+      password: this.signInForm.value["password"]
     }
     this.loginService.signIn(parmas).subscribe({
       next:(data)=>{
         localStorage.setItem("metawall-token",data.token)
         this.configService.setId(data._id)
         this.router.navigate(["/main/all-post"])
+        this.isLoading.emit(false);
       },
-      error:(error)=>{
-        this.errorMessage = error.message
+      error: (error) => {
+        this.errorMessage = error.message;
+        this.isLoading.emit(false);
       }
     })
   }
