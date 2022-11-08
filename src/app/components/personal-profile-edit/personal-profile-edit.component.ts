@@ -78,6 +78,7 @@ export class PersonalProfileEditComponent implements OnInit {
           sex: data.sex,
           avatar: this.imgUrl
         })
+        this.toastService.setSuccessToastMessage("更新成功");
       },
       error: (error) => {
         this.toastService.setWarningToastMessage(error.error.message)
