@@ -43,7 +43,7 @@ export class SignInComponent implements OnInit {
         this.isLoading.emit(false);
       },
       error: (error) => {
-        this.errorMessage = error.message;
+        this.errorMessage = error.error.message;
         this.isLoading.emit(false);
       }
     })
