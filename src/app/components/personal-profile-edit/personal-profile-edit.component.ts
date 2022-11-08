@@ -1,6 +1,6 @@
 import { UserImgUrlService } from 'src/app/services/user-img-url.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ConfigService } from 'src/app/services/config.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { ToastService } from 'src/app/services/toast.service';
@@ -14,19 +14,19 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PersonalProfileEditComponent implements OnInit {
   userForm: FormGroup = new FormGroup({
-    nickName: new FormControl(""),
+    nickName: new FormControl("", [Validators.required, Validators.minLength(8)]),
     avatar: new FormControl(""),
-    sex: new FormControl("male"),
+    sex: new FormControl("male", [Validators.required]),
   })
-  @Input() set user(user:user){
+  @Input() set user(user: user) {
     this.userForm.patchValue({
-      nickName:user?.nickName || "",
-      sex:user?.sex || "male"
+      nickName: user?.nickName || "",
+      sex: user?.sex || "male"
     })
   }
-  @Input() set avatar(avatar:string){
+  @Input() set avatar(avatar: string) {
     this.userForm.patchValue({
-      avatar:avatar || ""
+      avatar: avatar || ""
     })
     this.imgUrl = avatar;
   }
@@ -38,7 +38,7 @@ export class PersonalProfileEditComponent implements OnInit {
     private configService: ConfigService,
     private uploadService: UploadService,
     private toastService: ToastService,
-    private userService:UserService
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -69,17 +69,17 @@ export class PersonalProfileEditComponent implements OnInit {
     }
   }
 
-  uploadUserProfile(){
+  uploadUserProfile() {
     this.userService.patchUserProfile(this.userForm.value).subscribe({
-      next:(data)=>{
-        this.imgUrl = this.userImgUrlService.setUserImgUrl(data.avatar,data.sex)
+      next: (data) => {
+        this.imgUrl = this.userImgUrlService.setUserImgUrl(data.avatar, data.sex)
         this.userForm.setValue({
-          nickName:data.nickName,
-          sex:data.sex,
-          avatar:this.imgUrl
+          nickName: data.nickName,
+          sex: data.sex,
+          avatar: this.imgUrl
         })
       },
-      error:(error)=>{
+      error: (error) => {
         this.toastService.setWarningToastMessage(error.error.message)
       }
     })
