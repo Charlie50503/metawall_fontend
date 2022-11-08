@@ -14,7 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PersonalProfileEditComponent implements OnInit {
   userForm: FormGroup = new FormGroup({
-    nickName: new FormControl("", [Validators.required, Validators.minLength(8)]),
+    nickName: new FormControl("", [Validators.required, Validators.minLength(2)]),
     avatar: new FormControl(""),
     sex: new FormControl("male", [Validators.required]),
   })
