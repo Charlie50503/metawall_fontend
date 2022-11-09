@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { user } from 'src/app/interfaces/user.interface';
@@ -13,13 +14,17 @@ export class HeaderProfileComponent implements OnInit {
   userImgUrl: string = this.configService.userImgUrl;
 
   isShowNavigatorDropDown = false;
+
+  subscription = new Subscription();
   constructor(
     private configService: ConfigService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-
+    this.subscription = this.configService.userProfileChanged.subscribe(newUserProfile => {
+      this.userProfile = newUserProfile;
+    })
   }
 
   goUserProfile() {
@@ -38,5 +43,11 @@ export class HeaderProfileComponent implements OnInit {
 
   toggleNavigatorDropDown() {
     this.isShowNavigatorDropDown = !this.isShowNavigatorDropDown
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe();
   }
 }
