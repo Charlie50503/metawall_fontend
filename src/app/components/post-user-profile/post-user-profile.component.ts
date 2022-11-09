@@ -35,7 +35,7 @@ export class PostUserProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public goPersonPostPage(){
+  public goPersonalPostPage(){
     this.router.navigate(["/main/person-post",this.creatorId])
   }
 }
