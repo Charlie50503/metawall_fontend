@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { post } from '../interfaces/post.interface';
+import { user } from '../interfaces/user.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class UserImgUrlService {
   }
   constructor() { }
 
-  setUserImgUrl(userImgUrl: string, sex: post["creator"]["sex"]) {
+  setUserImgUrl(userImgUrl: string, sex: user["sex"]) {
     if (userImgUrl !== "") return userImgUrl
     if (sex === "male") {
       return this.defaultUserImgUrl[sex]
