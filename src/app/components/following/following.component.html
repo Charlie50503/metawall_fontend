@@ -1,6 +1,6 @@
 <app-main-header-primary title="追蹤名單"></app-main-header-primary>
 <ul class="list-unstyled mb-0">
-  <li *ngFor="let item of items;let idx=index" class="" [class]="{'mb-3':idx!==(items.length-1)}">
-    <app-following-media></app-following-media>
+  <li *ngFor="let follow of followList;let idx=index" class="" [class]="{'mb-3':idx!==(followList.length-1)}">
+    <app-following-media [follow]="follow"></app-following-media>
   </li>
 </ul>
