@@ -70,14 +70,20 @@ export class PersonalProfileEditComponent implements OnInit {
   }
 
   uploadUserProfile() {
+    this.userForm.patchValue({
+      avatar: this.userImgUrlService.isDefaultUserPhoto(this.imgUrl) ? "" : this.imgUrl
+    })
+
     this.userService.patchUserProfile(this.userForm.value).subscribe({
       next: (data) => {
         this.imgUrl = this.userImgUrlService.setUserImgUrl(data.avatar, data.sex)
         this.userForm.setValue({
           nickName: data.nickName,
           sex: data.sex,
-          avatar: this.imgUrl
-        })
+          avatar: data.avatar
+        });
+
+        this.imgUrl = this.userImgUrlService.setUserImgUrl(data.avatar, data.sex)
         this.toastService.setSuccessToastMessage("更新成功");
         this.configService.setUserProfile(data)
       },

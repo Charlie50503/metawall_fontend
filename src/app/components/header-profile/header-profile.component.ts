@@ -3,6 +3,7 @@ import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { user } from 'src/app/interfaces/user.interface';
 import { ConfigService } from 'src/app/services/config.service';
+import { UserImgUrlService } from 'src/app/services/user-img-url.service';
 
 @Component({
   selector: 'app-header-profile',
@@ -18,12 +19,14 @@ export class HeaderProfileComponent implements OnInit {
   subscription = new Subscription();
   constructor(
     private configService: ConfigService,
-    private router: Router
+    private router: Router,
+    private userImgUrlService: UserImgUrlService
   ) { }
 
   ngOnInit(): void {
-    this.subscription = this.configService.userProfileChanged.subscribe(newUserProfile => {
-      this.userProfile = newUserProfile;
+    this.subscription = this.configService.userProfileChanged.subscribe(newUserProfile=>{
+      this.userProfile = newUserProfile
+      this.userImgUrl =  this.userImgUrlService.setUserImgUrl(newUserProfile.avatar, newUserProfile.sex)
     })
   }
 

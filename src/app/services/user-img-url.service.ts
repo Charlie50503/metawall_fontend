@@ -19,4 +19,16 @@ export class UserImgUrlService {
       return this.defaultUserImgUrl[sex]
     }
   }
+
+  isDefaultUserPhoto(imgUrl:string){
+    for (const [key, value] of Object.entries(this.defaultUserImgUrl)) {
+      if(value===imgUrl){
+        console.log("true");
+
+        return true
+      }
+    }
+    console.log("false");
+    return false
+  }
 }

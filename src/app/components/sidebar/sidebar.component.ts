@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfigService } from 'src/app/services/config.service';
 import { user } from 'src/app/interfaces/user.interface';
+import { UserImgUrlService } from 'src/app/services/user-img-url.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,12 +19,14 @@ export class SidebarComponent implements OnInit {
   subscription = new Subscription();
   constructor(
     private configService:ConfigService,
-    private router:Router
+    private router:Router,
+    private userImgUrlService: UserImgUrlService
   ) { }
 
   ngOnInit(): void {
     this.subscription = this.configService.userProfileChanged.subscribe(newUserProfile=>{
       this.userProfile = newUserProfile
+      this.userImgUrl =  this.userImgUrlService.setUserImgUrl(newUserProfile.avatar, newUserProfile.sex)
     })
   }
 
