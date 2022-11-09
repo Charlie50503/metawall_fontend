@@ -82,7 +82,9 @@ export class PostPersonalProfileComponent implements OnInit {
   }
 
   checkShowFollowBtn(){
-    this.isShowFollowBtn = !this.ownerFollowing.includes(this.user?._id)
+    this.isShowFollowBtn = !this.ownerFollowing.some(follow=>{
+      return follow.user._id === this.user?._id
+    })
   }
 
   ngDoCheck(): void {
