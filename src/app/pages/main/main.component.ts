@@ -19,8 +19,8 @@ export class MainComponent implements OnInit {
     private userImgUrlService: UserImgUrlService
   ) { }
   ngOnInit(): void {
-    this.subscription = this.configService.userProfileChanged.subscribe(userProfile=>{
-      this.userProfile = userProfile
+    this.subscription = this.configService.userProfileChanged.subscribe(newUserProfile=>{
+      this.userProfile = newUserProfile
     })
     this.route.data.subscribe(
       {
