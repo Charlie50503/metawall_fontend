@@ -110,7 +110,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/metawall-fontend/",
+            "baseHref": "/metawall_fontend/",
             "name": "charlie50503",
             "email": "cate50503@gmail.com"
           }
