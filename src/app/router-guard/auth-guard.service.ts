@@ -9,22 +9,27 @@ import {
 import { catchError, map, Observable, of } from 'rxjs';
 
 import { AuthService } from '../services/auth/auth.service';
+import { ToastService } from '../services/toast.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router,
+    private authService: AuthService,
+    private toastService: ToastService) { }
 
   canActivate(): Observable<boolean | UrlTree> {
     return this.authService.isAuthenticated().pipe(
       catchError((err, caught) => {
-        return of(this.router.navigate(["/login"], { queryParams: { status:"error", toastMessage: "驗證失敗" } }))
+        this.toastService.setWarningToastMessage("驗證失敗");
+        return of(this.router.navigate(["/login"]))
       }),
       map((authenticated) => {
         if (authenticated) {
           return true;
         } else {
+          this.toastService.setWarningToastMessage("驗證失敗");
           return this.router.parseUrl('/login');
         }
       }),

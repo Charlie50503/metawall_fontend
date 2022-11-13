@@ -29,8 +29,9 @@ export class PersonalProfileChangePasswordComponent implements OnInit {
 
     this.userService.patchUploadPassword(this.passwordForm.value).subscribe({
       next: (data) => {
-        localStorage.removeItem("metawall-token")
-        this.router.navigate(["/login"], { queryParams: { status:"success", toastMessage: data.message } })
+        localStorage.removeItem("metawall-token");
+        this.toastService.setSuccessToastMessage(data.message);
+        this.router.navigate(["/login"])
       },
       error: (error) => {
         this.toastService.setWarningToastMessage(error.error.message);
