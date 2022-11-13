@@ -1,5 +1,5 @@
 import { Observable, Subscription } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfigService } from 'src/app/services/config.service';
 import { user } from 'src/app/interfaces/user.interface';
@@ -11,17 +11,19 @@ import { UserImgUrlService } from 'src/app/services/user-img-url.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit , OnDestroy {
-  userProfile = this.configService.userProfile;
+  // userProfile$ = this.configService.userProfileChanged;
 
-  // userProfile$ = this.configService.userProfile;
+  userProfile = this.configService.userProfile;
   userImgUrl = this.configService.userImgUrl;
 
   subscription = new Subscription();
   constructor(
-    private configService:ConfigService,
+    public configService:ConfigService,
     private router:Router,
     private userImgUrlService: UserImgUrlService
-  ) { }
+  ) {
+
+   }
 
   ngOnInit(): void {
     this.subscription = this.configService.userProfileChanged.subscribe(newUserProfile=>{

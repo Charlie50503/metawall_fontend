@@ -5,6 +5,9 @@
   <li class="mb-4">
     <div class="d-flex align-items-center cursor-pointer" (click)="linkToPersonalProfile()">
       <img class="user-photo rounded-circle border border-2 bd-black me-3 object-cover" [src]="userImgUrl" alt="">
+      <!-- <ng-container *ngIf="userProfile$ | async as userProfile">
+        <p class="text-black fw-bold lh-base mb-0" font="noto">{{userProfile.nickName}}</p>
+      </ng-container> -->
       <p class="text-black fw-bold lh-base mb-0" font="noto">{{userProfile.nickName}}</p>
     </div>
   </li>
