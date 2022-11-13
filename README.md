@@ -1,27 +1,66 @@
-# MetawallFontend
+# Metawall
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![](https://i.imgur.com/4uS27ly.png)
 
-## Code scaffolding
+一個簡單的貼近 Facebook 的 App
+使用 Angular 搭配 Express(Typescript) 建立
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [頁面網址]()
+* [後端 Repo](https://github.com/Charlie50503/metawall_backend)
 
-## Build
+## 功能說明
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### 登入頁面
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![](https://i.imgur.com/4uS27ly.png)
 
-## Running end-to-end tests
+### 全體動態牆
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![](https://i.imgur.com/SXk1qO5.png)
 
-## Further help
+### 個人動態牆
+![](https://i.imgur.com/zt783zY.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 修改個人資料
+![](https://i.imgur.com/asg8NlK.png)
+
+### 張貼動態
+![](https://i.imgur.com/RpYR3Cw.png)
+
+### 追蹤名單
+![](https://i.imgur.com/wy6glDa.png)
+
+### 我按讚的文章
+![](https://i.imgur.com/ucbVzY4.png)
+
+### 使用技術
+
+#### fontend
+
+* Angular
+* Bootstrap 5
+
+#### backend
+
+* Express
+* mongoDB
+* TypeScript
+* JWT
+* Imgur
+
+
+### 執行指令
+
+```
+// 開發環境
+ng serve
+
+// 生產環境
+npm run build2
+
+// 格式化
+npm run fmt
+```
