@@ -1,5 +1,5 @@
 import { ToastService } from '../../services/toast.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 declare var bootstrap : any ;
 @Component({
@@ -7,7 +7,7 @@ declare var bootstrap : any ;
   templateUrl: './warning-toast.component.html',
   styleUrls: ['./warning-toast.component.scss']
 })
-export class WarningToastComponent implements OnInit {
+export class WarningToastComponent implements OnInit,OnDestroy {
   warningMessage = ""
 
   subscription = new Subscription;

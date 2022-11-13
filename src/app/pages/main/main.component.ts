@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { ConfigService } from './../../services/config.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { user } from 'src/app/interfaces/user.interface';
 import { ActivatedRoute } from '@angular/router';
 import { UserImgUrlService } from 'src/app/services/user-img-url.service';
@@ -10,7 +10,7 @@ import { UserImgUrlService } from 'src/app/services/user-img-url.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit,OnDestroy {
   userProfile: user = this.configService.userProfile;
   subscription = new Subscription;
   constructor(

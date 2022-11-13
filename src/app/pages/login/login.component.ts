@@ -1,5 +1,5 @@
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToastService } from 'src/app/services/toast.service';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnDestroy {
   isSignInPage = true;
   isLoading = false;
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ToastService } from 'src/app/services/toast.service';
 declare var bootstrap: any;
@@ -8,7 +8,7 @@ declare var bootstrap: any;
   templateUrl: './success-toast.component.html',
   styleUrls: ['./success-toast.component.scss']
 })
-export class SuccessToastComponent implements OnInit {
+export class SuccessToastComponent implements OnInit, OnDestroy {
   successMessage = ""
 
   subscription = new Subscription;

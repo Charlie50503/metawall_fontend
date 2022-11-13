@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, SimpleChanges, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { user } from 'src/app/interfaces/user.interface';
 import { ConfigService } from 'src/app/services/config.service';
@@ -10,7 +10,7 @@ import { UserImgUrlService } from 'src/app/services/user-img-url.service';
   templateUrl: './header-profile.component.html',
   styleUrls: ['./header-profile.component.scss']
 })
-export class HeaderProfileComponent implements OnInit {
+export class HeaderProfileComponent implements OnInit, OnDestroy {
   userProfile: user = this.configService.userProfile;
   userImgUrl: string = this.configService.userImgUrl;
 
