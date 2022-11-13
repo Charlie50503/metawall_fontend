@@ -7,7 +7,7 @@
 一個簡單的貼近 Facebook 的 App
 使用 Angular 搭配 Express(Typescript) 建立
 
-* [頁面網址]()
+* [頁面網址](https://charlie50503.github.io/metawall_fontend/#/login)
 * [後端 Repo](https://github.com/Charlie50503/metawall_backend)
 
 ## 功能說明
