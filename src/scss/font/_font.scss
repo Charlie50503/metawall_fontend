@@ -1,23 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
-@import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&family=Baloo+Da+2&family=Noto+Sans+TC:wght@400;700&display=swap');
 
+@font-face {
+  font-family: Helvetica Neue;
+  src: url(/assets/fonts/Helvetica-Neue.ttf) format('truetype');
+}
+
 [font~=paytone] {
-  font-family: "Paytone One",sans-serif;
+  font-family: 'Paytone One',sans-serif;
 }
 
 [font~=helvetica] {
-  font-family: "Helvetica Neue";
+  font-family: 'Helvetica Neue';
 }
 
 [font~=azeret] {
-  font-family: "Azeret Mono";
+  font-family: 'Azeret Mono';
 }
 
 [font~=noto] {
-  font-family: "Noto Sans TC";
+  font-family: 'Noto Sans TC';
 }
 
 [font~=baloo] {
-  font-family: "Baloo Da 2";
+  font-family: 'Baloo Da 2';
 }
